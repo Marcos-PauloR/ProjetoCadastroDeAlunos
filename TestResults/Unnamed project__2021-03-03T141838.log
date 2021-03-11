@@ -1,0 +1,134 @@
+﻿2021-03-03T14:18:37.9802934-03:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-03-03T14:18:37.9802934-03:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.7.3 in Framework clr40 in x86 mode execution started
+2021-03-03T14:18:37.9802934-03:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-03-03T14:18:37.9802934-03:00;VSTestExecutionThread;Info;Current UserName: 'Usuario', MachineName: 'DESKTOP-OJBJSH6'
+2021-03-03T14:18:38.0072761-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-03T14:18:38.0072761-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-03T14:18:38.0072761-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-03T14:18:38.0460754-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-03T141838.log
+2021-03-03T14:18:38.0520696-03:00;Thread#13;Info;Checking activation
+2021-03-03T14:18:38.1160322-03:00;Thread#13;Info;Activated.
+2021-03-03T14:18:38.1160322-03:00;Thread#13;Info;Activation check completed
+2021-03-03T14:18:38.1160322-03:00;Thread#13;Info;Starting test run
+2021-03-03T14:18:38.1509986-03:00;Thread#13;Info;Discovering target: Default
+2021-03-03T14:18:38.1509986-03:00;Thread#13;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-03T14:18:38.4158608-03:00;Thread#13;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-03T14:18:38.4168604-03:00:Test Suite Dump
+2021-03-03T14:18:38.4178608-03:00:#0: Unnamed project/ - 
+2021-03-03T14:18:38.4178608-03:00:#1: Default - 
+2021-03-03T14:18:38.4178608-03:00:#2: EM.Domain.Testes - 
+2021-03-03T14:18:38.4178608-03:00:#3: Calculator - 
+2021-03-03T14:18:38.4478420-03:00:#5: Add two numbers - TestAssembly:EM.Domain.Testes/Feature:Calculator/Scenario:Add+two+numbers
+2021-03-03T14:18:38.4478420-03:00:End: Test Suite Dump
+2021-03-03T14:18:38.4658322-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-03T14:18:38.4678308-03:00:Thread#:Scheduler: testitem #5 from normal test queue 
+2021-03-03T14:18:38.4678308-03:00:Thread#0:Scheduler: considering testitem #5 for thread 0
+2021-03-03T14:18:38.4718282-03:00:Thread#0:TestItem#5:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-03T14:18:38.4718282-03:00:Thread#0:TestItem#5:runsOnOneOtherThreadSpecific:False
+2021-03-03T14:18:38.4718282-03:00:Thread#0:TestItem#5:runsOnOneOtherThreadUnspecific:False
+2021-03-03T14:18:38.4718282-03:00:Thread#0:Scheduler: using testitem #5 for thread 0
+2021-03-03T14:18:38.4728277-03:00:Thread#0:Scheduler: Test #5 is scheduled for thread
+2021-03-03T14:18:38.4738271-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-03T14:18:38.4758258-03:00:Thread #0: creating new test thread executor for EM.Domain.Testes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-03-03T14:18:38.4778245-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-03T14:18:38.4798234-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-03T14:18:38.4808228-03:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2021-03-03T14:18:38.6766992-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
+2021-03-03T14:18:38.6836950-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-03-03T14:18:38.6866931-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-03T14:18:38.6866931-03:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in EM.Domain.Testes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-03-03T14:18:38.6886917-03:00:Thread#0:T:-> Using default config
+2021-03-03T14:18:39.0674570-03:00:Thread#0: Test #5/0 is started on thread #0
+2021-03-03T14:18:39.0934410-03:00:Thread#0:B:Given the first number is 50
+2021-03-03T14:18:39.1793878-03:00:Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+2021-03-03T14:18:39.1793878-03:00:Thread#0:T:        [Given(@"the first number is (.*)")]
+2021-03-03T14:18:39.1803871-03:00:Thread#0:T:        public void GivenTheFirstNumberIs(int p0)
+2021-03-03T14:18:39.1803871-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.1803871-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-03T14:18:39.1803871-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.1813865-03:00:Thread#0:B:And the second number is 70
+2021-03-03T14:18:39.1843846-03:00:Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+2021-03-03T14:18:39.1843846-03:00:Thread#0:T:        [Given(@"the second number is (.*)")]
+2021-03-03T14:18:39.1843846-03:00:Thread#0:T:        public void GivenTheSecondNumberIs(int p0)
+2021-03-03T14:18:39.1843846-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.1843846-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-03T14:18:39.1843846-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.1853840-03:00:Thread#0:B:When the two numbers are added
+2021-03-03T14:18:39.1873828-03:00:Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+2021-03-03T14:18:39.1873828-03:00:Thread#0:T:        [When(@"the two numbers are added")]
+2021-03-03T14:18:39.1873828-03:00:Thread#0:T:        public void WhenTheTwoNumbersAreAdded()
+2021-03-03T14:18:39.1873828-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.1873828-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-03T14:18:39.1873828-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.1883821-03:00:Thread#0:B:Then the result should be 120
+2021-03-03T14:18:39.1903811-03:00:Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+2021-03-03T14:18:39.1903811-03:00:Thread#0:T:        [Then(@"the result should be (.*)")]
+2021-03-03T14:18:39.1903811-03:00:Thread#0:T:        public void ThenTheResultShouldBe(int p0)
+2021-03-03T14:18:39.1903811-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.1903811-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-03T14:18:39.1903811-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.2593382-03:00:Thread#0:T:Pending: No matching step definition found for one or more steps.
+2021-03-03T14:18:39.2593382-03:00:Thread#0:T:using System;
+2021-03-03T14:18:39.2593382-03:00:Thread#0:T:using TechTalk.SpecFlow;
+2021-03-03T14:18:39.2593382-03:00:Thread#0:T:namespace MyNamespace
+2021-03-03T14:18:39.2593382-03:00:Thread#0:T:{
+2021-03-03T14:18:39.2593382-03:00:Thread#0:T:    [Binding]
+2021-03-03T14:18:39.2593382-03:00:Thread#0:T:    public class StepDefinitions
+2021-03-03T14:18:39.2593382-03:00:Thread#0:T:    {
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        private readonly ScenarioContext _scenarioContext;
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        public StepDefinitions(ScenarioContext scenarioContext)
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:            _scenarioContext = scenarioContext;
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        [Given(@"the first number is (.*)")]
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        public void GivenTheFirstNumberIs(int p0)
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        [Given(@"the second number is (.*)")]
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        public void GivenTheSecondNumberIs(int p0)
+2021-03-03T14:18:39.2603377-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        [When(@"the two numbers are added")]
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        public void WhenTheTwoNumbersAreAdded()
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        [Then(@"the result should be (.*)")]
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        public void ThenTheResultShouldBe(int p0)
+2021-03-03T14:18:39.2613369-03:00:Thread#0:T:        {
+2021-03-03T14:18:39.2633359-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-03T14:18:39.2633359-03:00:Thread#0:T:        }
+2021-03-03T14:18:39.2633359-03:00:Thread#0:T:    }
+2021-03-03T14:18:39.2633359-03:00:Thread#0:T:}
+2021-03-03T14:18:39.2703314-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-03T14:18:39.2703314-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-03T14:18:39.2703314-03:00:Thread#0:Scheduler: enumerator for thread is at end
+2021-03-03T14:18:39.2703314-03:00:Thread#0:Scheduler: No more tests for thread
+2021-03-03T14:18:39.2843228-03:00:Thread#0: Test #5/0 is finished on thread #0 as Pending within 0,2168658 seconds
+2021-03-03T14:18:39.3322928-03:00:Thread#0:T:LivingDocPlugin: Output generated in: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\TestExecution.json
+2021-03-03T14:18:40.0766822-03:00:Trying to cancel thread
+2021-03-03T14:18:40.0766822-03:00:Thread cancelled
+2021-03-03T14:18:40.0826782-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-03T14:18:40.0826782-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-03T14:18:40.0826782-03:00:Thread#-1:Scheduler: enumerator for thread is at end
+2021-03-03T14:18:40.0836777-03:00;Thread#13;Info;test run finished
+2021-03-03T14:18:40.0836777-03:00;Thread#13;Info;publishing test results
+2021-03-03T14:18:40.1216520-03:00;Thread#13;Info;test results published
+2021-03-03T14:18:40.1216520-03:00;Thread#13;Info;generating reports
+2021-03-03T14:18:40.2145956-03:00;Thread#13;Info;Starting external report generation process
+2021-03-03T14:18:41.5625485-03:00;Thread#13;Info;Successfully generated reports.
+2021-03-03T14:18:41.5645462-03:00;Thread#13;Info;Successfully generated reports
+2021-03-03T14:18:41.5716423-03:00:Total: 1
+2021-03-03T14:18:41.5726416-03:00:Succeeded: 0
+2021-03-03T14:18:41.5736411-03:00:Ignored: 0
+2021-03-03T14:18:41.5736411-03:00:Pending: 1
+2021-03-03T14:18:41.5736411-03:00:Skipped: 0
+2021-03-03T14:18:41.5736411-03:00:Failed: 0
+2021-03-03T14:18:41.5836345-03:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-03-03T14:18:41.5836345-03:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-03T141838.html'
+========== End of log file ==========

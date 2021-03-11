@@ -1,0 +1,342 @@
+﻿2021-03-08T10:28:41.7673375-03:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-03-08T10:28:41.7673375-03:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.7.3 in Framework clr40 in x86 mode execution started
+2021-03-08T10:28:41.7673375-03:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-03-08T10:28:41.7673375-03:00;VSTestExecutionThread;Info;Current UserName: 'Usuario', MachineName: 'DESKTOP-OJBJSH6'
+2021-03-08T10:28:41.7963201-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T10:28:41.7963201-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-08T10:28:41.7963201-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-08T10:28:41.8410761-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-08T102841.log
+2021-03-08T10:28:41.8480724-03:00;Thread#14;Info;Checking activation
+2021-03-08T10:28:41.9140309-03:00;Thread#14;Info;Activated.
+2021-03-08T10:28:41.9140309-03:00;Thread#14;Info;Activation check completed
+2021-03-08T10:28:41.9140309-03:00;Thread#14;Info;Starting test run
+2021-03-08T10:28:41.9528867-03:00;Thread#14;Info;Discovering target: Default
+2021-03-08T10:28:41.9528867-03:00;Thread#14;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T10:28:42.2376910-03:00;Thread#14;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T10:28:42.2386933-03:00:Test Suite Dump
+2021-03-08T10:28:42.2396936-03:00:#0: Unnamed project/ - 
+2021-03-08T10:28:42.2396936-03:00:#1: Default - 
+2021-03-08T10:28:42.2396936-03:00:#2: EM.Repository.Tests - 
+2021-03-08T10:28:42.2396936-03:00:#3: Inserir dados na tabela - 
+2021-03-08T10:28:42.2736725-03:00:#4: Adicionar aluno na Lista - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Adicionar+aluno+na+Lista
+2021-03-08T10:28:42.2736725-03:00:#5: Adicionar aluno, 123 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Adicionar+aluno%2c+123
+2021-03-08T10:28:42.2736725-03:00:#6: Adicionar aluno, 12345 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Adicionar+aluno%2c+12345
+2021-03-08T10:28:42.2736725-03:00:#7: Remover alunos - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Remover+alunos
+2021-03-08T10:28:42.2736725-03:00:#8: Romver Aluno, 141156062 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Romver+Aluno%2c+141156062
+2021-03-08T10:28:42.2736725-03:00:#9: Romver Aluno, 123 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Romver+Aluno%2c+123
+2021-03-08T10:28:42.2736725-03:00:#10: Alterar aluno na lista - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno+na+lista
+2021-03-08T10:28:42.2736725-03:00:#11: Alterar aluno, 43201857 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+43201857
+2021-03-08T10:28:42.2736725-03:00:#12: Alterar aluno, 475089110 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+475089110
+2021-03-08T10:28:42.2736725-03:00:#13: Alterar aluno, 745118505 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+745118505
+2021-03-08T10:28:42.2736725-03:00:#14: Alterar aluno, 24450275 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+24450275
+2021-03-08T10:28:42.2736725-03:00:#15: Alterar aluno, 548808454 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+548808454
+2021-03-08T10:28:42.2736725-03:00:#16: Listar alunos - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Listar+alunos
+2021-03-08T10:28:42.2736725-03:00:#17: Busca por parte do nome na lista - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Busca+por+parte+do+nome+na+lista
+2021-03-08T10:28:42.2736725-03:00:#18: Buscar por qualquer parte do nome, aulo - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Buscar+por+qualquer+parte+do+nome%2c+aulo
+2021-03-08T10:28:42.2736725-03:00:#19: Busco por numero de matricula do aluno - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Busco+por+numero+de+matricula+do+aluno
+2021-03-08T10:28:42.2736725-03:00:#20: Buscar aluno pela matricula, 407204222 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Buscar+aluno+pela+matricula%2c+407204222
+2021-03-08T10:28:42.2736725-03:00:End: Test Suite Dump
+2021-03-08T10:28:42.2936602-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:42.2956589-03:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2021-03-08T10:28:42.2956589-03:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-03-08T10:28:42.2996564-03:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:42.2996564-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:42.2996564-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:42.2996564-03:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-03-08T10:28:42.3006591-03:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-03-08T10:28:42.3016555-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T10:28:42.3036540-03:00:Thread #0: creating new test thread executor for EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-03-08T10:28:42.3056527-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-08T10:28:42.3076516-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-08T10:28:42.3086513-03:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2021-03-08T10:28:42.5329341-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
+2021-03-08T10:28:42.5419288-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-03-08T10:28:42.5449269-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T10:28:42.5459250-03:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-03-08T10:28:42.5479228-03:00:Thread#0:T:-> Using default config
+2021-03-08T10:28:42.9606710-03:00:Thread#0: Test #4/0 is started on thread #0
+2021-03-08T10:28:42.9936514-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:42.9936514-03:00:Thread#:Scheduler: testitem #5 from normal test queue 
+2021-03-08T10:28:42.9936514-03:00:Thread#0:Scheduler: considering testitem #5 for thread 0
+2021-03-08T10:28:42.9936514-03:00:Thread#0:TestItem#5:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:42.9936514-03:00:Thread#0:TestItem#5:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:42.9936514-03:00:Thread#0:TestItem#5:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:42.9936514-03:00:Thread#0:Scheduler: using testitem #5 for thread 0
+2021-03-08T10:28:42.9936514-03:00:Thread#0:Scheduler: Test #5 is scheduled for thread
+2021-03-08T10:28:42.9936514-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T10:28:43.0026450-03:00:Thread#0: Test #4/0 is finished on thread #0 as Succeeded within 0,041974 seconds
+2021-03-08T10:28:43.0036436-03:00:Thread#0: Test #5/0 is started on thread #0
+2021-03-08T10:28:43.0096406-03:00:Thread#0:B:Dado O nome é Paulo
+2021-03-08T10:28:43.0905923-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoONome("Paulo") (0,0s)
+2021-03-08T10:28:43.0925905-03:00:Thread#0:B:E Matricula é 123
+2021-03-08T10:28:43.0945895-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoMatriculaE(123) (0,0s)
+2021-03-08T10:28:43.0945895-03:00:Thread#0:B:E Nascimento 29/05/2000
+2021-03-08T10:28:43.0975872-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoNascimento("29/05/2000") (0,0s)
+2021-03-08T10:28:43.0975872-03:00:Thread#0:B:E Sexo Masculino
+2021-03-08T10:28:43.0985870-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoSexo("Masculino") (0,0s)
+2021-03-08T10:28:43.0985870-03:00:Thread#0:B:E Cpf
+2021-03-08T10:28:43.0995863-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoCpf("") (0,0s)
+2021-03-08T10:28:43.0995863-03:00:Thread#0:B:Quando Adicionar dados na lista
+2021-03-08T10:28:43.3014677-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.QuandoAdicionarDadosNaLista() (0,2s)
+2021-03-08T10:28:43.3014677-03:00:Thread#0:B:Entao vejo que aluno foi inserido com sucesso
+2021-03-08T10:28:43.3556554-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.EntaoVejoQueAlunoFoiInseridoComSucesso() (0,1s)
+2021-03-08T10:28:43.3626533-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:43.3626533-03:00:Thread#:Scheduler: testitem #6 from normal test queue 
+2021-03-08T10:28:43.3626533-03:00:Thread#0:Scheduler: considering testitem #6 for thread 0
+2021-03-08T10:28:43.3626533-03:00:Thread#0:TestItem#6:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:43.3626533-03:00:Thread#0:TestItem#6:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:43.3626533-03:00:Thread#0:TestItem#6:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:43.3626533-03:00:Thread#0:Scheduler: using testitem #6 for thread 0
+2021-03-08T10:28:43.3626533-03:00:Thread#0:Scheduler: Test #6 is scheduled for thread
+2021-03-08T10:28:43.3626533-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T10:28:43.3756453-03:00:Thread#0: Test #5/0 is finished on thread #0 as Succeeded within 0,3720017 seconds
+2021-03-08T10:28:43.3756453-03:00:Thread#0: Test #6/0 is started on thread #0
+2021-03-08T10:28:43.3766471-03:00:Thread#0:B:Dado O nome é Paty
+2021-03-08T10:28:43.3776428-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoONome("Paty") (0,0s)
+2021-03-08T10:28:43.3786439-03:00:Thread#0:B:E Matricula é 12345
+2021-03-08T10:28:43.3786439-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoMatriculaE(12345) (0,0s)
+2021-03-08T10:28:43.3796432-03:00:Thread#0:B:E Nascimento 08/04/1998
+2021-03-08T10:28:43.3796432-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoNascimento("08/04/1998") (0,0s)
+2021-03-08T10:28:43.3806423-03:00:Thread#0:B:E Sexo Feminino
+2021-03-08T10:28:43.3816416-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoSexo("Feminino") (0,0s)
+2021-03-08T10:28:43.3816416-03:00:Thread#0:B:E Cpf 70536598100
+2021-03-08T10:28:43.3826393-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoCpf("70536598100") (0,0s)
+2021-03-08T10:28:43.3826393-03:00:Thread#0:B:Quando Adicionar dados na lista
+2021-03-08T10:28:43.4542372-03:00:Thread#0:T:error: violation of PRIMARY or UNIQUE KEY constraint "ALUNO_UN" on table "ALUNO"
+2021-03-08T10:28:43.4552366-03:00:Thread#0:T:Problematic key value is ("CPF" = '70536598100') (0,1s)
+2021-03-08T10:28:43.4562359-03:00:Thread#0:B:Entao vejo que aluno foi inserido com sucesso
+2021-03-08T10:28:43.4572353-03:00:Thread#0:T:skipped because of previous errors
+2021-03-08T10:28:43.4682309-03:00:Thread#0:TestItem#6:Scheduler: reschedule tests for testitem #6
+2021-03-08T10:28:43.4702298-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:43.4702298-03:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #6
+2021-03-08T10:28:43.4702298-03:00:Thread#0:Scheduler: considering testitem #6 for thread 0
+2021-03-08T10:28:43.4702298-03:00:Thread#0:TestItem#6:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:43.4702298-03:00:Thread#0:TestItem#6:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:43.4702298-03:00:Thread#0:TestItem#6:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:43.4702298-03:00:Thread#0:Scheduler: using testitem #6 for thread 0
+2021-03-08T10:28:43.4702298-03:00:Thread#0:Scheduler: Test #6 is scheduled for thread
+2021-03-08T10:28:43.4702298-03:00:Thread#0:Scheduler: with testItemExecutionIndex 1
+2021-03-08T10:28:43.4712292-03:00:Thread#0: Test #6/0 is finished on thread #0 as Failed within 0,0955839 seconds
+2021-03-08T10:28:43.4722283-03:00:Thread#0: Test #6/1 is started on thread #0
+2021-03-08T10:28:43.4732278-03:00:Thread#0:B:Dado O nome é Paty
+2021-03-08T10:28:43.4752268-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoONome("Paty") (0,0s)
+2021-03-08T10:28:43.4752268-03:00:Thread#0:B:E Matricula é 12345
+2021-03-08T10:28:43.4762259-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoMatriculaE(12345) (0,0s)
+2021-03-08T10:28:43.4762259-03:00:Thread#0:B:E Nascimento 08/04/1998
+2021-03-08T10:28:43.4772253-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoNascimento("08/04/1998") (0,0s)
+2021-03-08T10:28:43.4772253-03:00:Thread#0:B:E Sexo Feminino
+2021-03-08T10:28:43.4782247-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoSexo("Feminino") (0,0s)
+2021-03-08T10:28:43.4782247-03:00:Thread#0:B:E Cpf 70536598100
+2021-03-08T10:28:43.4792241-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoCpf("70536598100") (0,0s)
+2021-03-08T10:28:43.4802234-03:00:Thread#0:B:Quando Adicionar dados na lista
+2021-03-08T10:28:43.4921267-03:00:Thread#0:T:error: violation of PRIMARY or UNIQUE KEY constraint "ALUNO_UN" on table "ALUNO"
+2021-03-08T10:28:43.4931263-03:00:Thread#0:T:Problematic key value is ("CPF" = '70536598100') (0,0s)
+2021-03-08T10:28:43.4931263-03:00:Thread#0:B:Entao vejo que aluno foi inserido com sucesso
+2021-03-08T10:28:43.4941256-03:00:Thread#0:T:skipped because of previous errors
+2021-03-08T10:28:43.4951250-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:43.4951250-03:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #6
+2021-03-08T10:28:43.4951250-03:00:Thread#0:Scheduler: considering testitem #6 for thread 0
+2021-03-08T10:28:43.4951250-03:00:Thread#0:TestItem#6:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:43.4951250-03:00:Thread#0:TestItem#6:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:43.4951250-03:00:Thread#0:TestItem#6:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:43.4951250-03:00:Thread#0:Scheduler: using testitem #6 for thread 0
+2021-03-08T10:28:43.4951250-03:00:Thread#0:Scheduler: Test #6 is scheduled for thread
+2021-03-08T10:28:43.4951250-03:00:Thread#0:Scheduler: with testItemExecutionIndex 2
+2021-03-08T10:28:43.5001218-03:00:Thread#0: Test #6/1 is finished on thread #0 as Failed within 0,0278935 seconds
+2021-03-08T10:28:43.5011192-03:00:Thread#0: Test #6/2 is started on thread #0
+2021-03-08T10:28:43.5021193-03:00:Thread#0:B:Dado O nome é Paty
+2021-03-08T10:28:43.5031189-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoONome("Paty") (0,0s)
+2021-03-08T10:28:43.5041187-03:00:Thread#0:B:E Matricula é 12345
+2021-03-08T10:28:43.5041187-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoMatriculaE(12345) (0,0s)
+2021-03-08T10:28:43.5051178-03:00:Thread#0:B:E Nascimento 08/04/1998
+2021-03-08T10:28:43.5051178-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoNascimento("08/04/1998") (0,0s)
+2021-03-08T10:28:43.5061172-03:00:Thread#0:B:E Sexo Feminino
+2021-03-08T10:28:43.5061172-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoSexo("Feminino") (0,0s)
+2021-03-08T10:28:43.5071166-03:00:Thread#0:B:E Cpf 70536598100
+2021-03-08T10:28:43.5081159-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoCpf("70536598100") (0,0s)
+2021-03-08T10:28:43.5081159-03:00:Thread#0:B:Quando Adicionar dados na lista
+2021-03-08T10:28:43.5243865-03:00:Thread#0:T:error: violation of PRIMARY or UNIQUE KEY constraint "ALUNO_UN" on table "ALUNO"
+2021-03-08T10:28:43.5253813-03:00:Thread#0:T:Problematic key value is ("CPF" = '70536598100') (0,0s)
+2021-03-08T10:28:43.5253813-03:00:Thread#0:B:Entao vejo que aluno foi inserido com sucesso
+2021-03-08T10:28:43.5263804-03:00:Thread#0:T:skipped because of previous errors
+2021-03-08T10:28:43.5273813-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:43.5273813-03:00:Thread#:Scheduler: testitem #7 from normal test queue 
+2021-03-08T10:28:43.5273813-03:00:Thread#0:Scheduler: considering testitem #7 for thread 0
+2021-03-08T10:28:43.5273813-03:00:Thread#0:TestItem#7:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:43.5273813-03:00:Thread#0:TestItem#7:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:43.5273813-03:00:Thread#0:TestItem#7:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:43.5273813-03:00:Thread#0:Scheduler: using testitem #7 for thread 0
+2021-03-08T10:28:43.5273813-03:00:Thread#0:Scheduler: Test #7 is scheduled for thread
+2021-03-08T10:28:43.5273813-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T10:28:43.5283805-03:00:Thread#0: Test #6/2 is finished on thread #0 as Failed within 0,0272613 seconds
+2021-03-08T10:28:43.5293799-03:00:Thread#0: Test #7/0 is started on thread #0
+2021-03-08T10:28:43.5333775-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:43.5333775-03:00:Thread#:Scheduler: testitem #8 from normal test queue 
+2021-03-08T10:28:43.5333775-03:00:Thread#0:Scheduler: considering testitem #8 for thread 0
+2021-03-08T10:28:43.5333775-03:00:Thread#0:TestItem#8:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:43.5333775-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:43.5333775-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:43.5333775-03:00:Thread#0:Scheduler: using testitem #8 for thread 0
+2021-03-08T10:28:43.5333775-03:00:Thread#0:Scheduler: Test #8 is scheduled for thread
+2021-03-08T10:28:43.5333775-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T10:28:43.5333775-03:00:Thread#0: Test #7/0 is finished on thread #0 as Succeeded within 0,0039976 seconds
+2021-03-08T10:28:43.5343757-03:00:Thread#0: Test #8/0 is started on thread #0
+2021-03-08T10:28:43.5363776-03:00:Thread#0:B:Dado Que a Matricula é 141156062
+2021-03-08T10:28:43.5373754-03:00:Thread#0:T:done: RemoverAluno.DadoQueAMatriculaE(141156062) (0,0s)
+2021-03-08T10:28:43.5383742-03:00:Thread#0:B:Quando Remover aluno da lista
+2021-03-08T10:28:43.5483048-03:00:Thread#0:T:done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)
+2021-03-08T10:28:43.5483048-03:00:Thread#0:B:Entao vejo que aluno foi removido com sucesso
+2021-03-08T10:28:43.5642943-03:00:Thread#0:T:error: A sequência não contém elementos (0,0s)
+2021-03-08T10:28:43.5652950-03:00:Thread#0:TestItem#8:Scheduler: reschedule tests for testitem #8
+2021-03-08T10:28:43.5662945-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:43.5662945-03:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #8
+2021-03-08T10:28:43.5662945-03:00:Thread#0:Scheduler: considering testitem #8 for thread 0
+2021-03-08T10:28:43.5662945-03:00:Thread#0:TestItem#8:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:43.5662945-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:43.5662945-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:43.5662945-03:00:Thread#0:Scheduler: using testitem #8 for thread 0
+2021-03-08T10:28:43.5662945-03:00:Thread#0:Scheduler: Test #8 is scheduled for thread
+2021-03-08T10:28:43.5662945-03:00:Thread#0:Scheduler: with testItemExecutionIndex 1
+2021-03-08T10:28:43.5662945-03:00:Thread#0: Test #8/0 is finished on thread #0 as Failed within 0,0319188 seconds
+2021-03-08T10:28:43.5672929-03:00:Thread#0: Test #8/1 is started on thread #0
+2021-03-08T10:28:43.5682925-03:00:Thread#0:B:Dado Que a Matricula é 141156062
+2021-03-08T10:28:43.5692916-03:00:Thread#0:T:done: RemoverAluno.DadoQueAMatriculaE(141156062) (0,0s)
+2021-03-08T10:28:43.5702920-03:00:Thread#0:B:Quando Remover aluno da lista
+2021-03-08T10:28:43.5792942-03:00:Thread#0:T:done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)
+2021-03-08T10:28:43.5792942-03:00:Thread#0:B:Entao vejo que aluno foi removido com sucesso
+2021-03-08T10:28:43.5904975-03:00:Thread#0:T:error: A sequência não contém elementos (0,0s)
+2021-03-08T10:28:43.5924961-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:43.5924961-03:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #8
+2021-03-08T10:28:43.5924961-03:00:Thread#0:Scheduler: considering testitem #8 for thread 0
+2021-03-08T10:28:43.5924961-03:00:Thread#0:TestItem#8:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:43.5924961-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:43.5924961-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:43.5924961-03:00:Thread#0:Scheduler: using testitem #8 for thread 0
+2021-03-08T10:28:43.5924961-03:00:Thread#0:Scheduler: Test #8 is scheduled for thread
+2021-03-08T10:28:43.5924961-03:00:Thread#0:Scheduler: with testItemExecutionIndex 2
+2021-03-08T10:28:43.5924961-03:00:Thread#0: Test #8/1 is finished on thread #0 as Failed within 0,0252032 seconds
+2021-03-08T10:28:43.5934947-03:00:Thread#0: Test #8/2 is started on thread #0
+2021-03-08T10:28:43.5944954-03:00:Thread#0:B:Dado Que a Matricula é 141156062
+2021-03-08T10:28:43.5954945-03:00:Thread#0:T:done: RemoverAluno.DadoQueAMatriculaE(141156062) (0,0s)
+2021-03-08T10:28:43.5964927-03:00:Thread#0:B:Quando Remover aluno da lista
+2021-03-08T10:28:43.6055612-03:00:Thread#0:T:done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)
+2021-03-08T10:28:43.6055612-03:00:Thread#0:B:Entao vejo que aluno foi removido com sucesso
+2021-03-08T10:28:43.6165543-03:00:Thread#0:T:error: A sequência não contém elementos (0,0s)
+2021-03-08T10:28:43.6175536-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T10:28:43.6175536-03:00:Thread#:Scheduler: testitem #9 from normal test queue 
+2021-03-08T10:28:43.6175536-03:00:Thread#0:Scheduler: considering testitem #9 for thread 0
+2021-03-08T10:28:43.6175536-03:00:Thread#0:TestItem#9:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T10:28:43.6175536-03:00:Thread#0:TestItem#9:runsOnOneOtherThreadSpecific:False
+2021-03-08T10:28:43.6175536-03:00:Thread#0:TestItem#9:runsOnOneOtherThreadUnspecific:False
+2021-03-08T10:28:43.6175536-03:00:Thread#0:Scheduler: using testitem #9 for thread 0
+2021-03-08T10:28:43.6175536-03:00:Thread#0:Scheduler: Test #9 is scheduled for thread
+2021-03-08T10:28:43.6175536-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T10:28:43.6185530-03:00:Thread#0: Test #8/2 is finished on thread #0 as Failed within 0,0250583 seconds
+2021-03-08T10:28:43.6195503-03:00:Thread#0: Test #9/0 is started on thread #0
+2021-03-08T10:28:43.6205511-03:00:Thread#0:B:Dado Que a Matricula é 123
+2021-03-08T10:28:43.6215494-03:00:Thread#0:T:done: RemoverAluno.DadoQueAMatriculaE(123) (0,0s)
+2021-03-08T10:28:43.6225497-03:00:Thread#0:B:Quando Remover aluno da lista
+2021-03-08T10:28:43.6325423-03:00:Thread#0:T:done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)
+2021-03-08T10:28:43.6335418-03:00:Thread#0:B:Entao vejo que aluno foi removido com sucesso
+2021-03-08T10:28:43.6445349-03:00:Thread#0:T:error: A sequência não contém elementos (0,0s)
+2021-03-08T10:28:43.6455343-03:00:Cancelling because configured number of failures reached
+2021-03-08T10:28:43.6475331-03:00:Thread#0: Test #9/0 is finished on thread #0 as Failed within 0,0279828 seconds
+2021-03-08T10:28:43.6985038-03:00:Thread#0:T:LivingDocPlugin: Output generated in: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TestExecution.json
+2021-03-08T10:28:44.7013178-03:00:Trying to cancel thread
+2021-03-08T10:28:44.7013178-03:00:Thread cancelled
+2021-03-08T10:28:44.7133103-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7133103-03:00:Thread#:Scheduler: testitem #10 from normal test queue 
+2021-03-08T10:28:44.7133103-03:00:Thread#-1:Scheduler: considering testitem #10 for thread -1
+2021-03-08T10:28:44.7133103-03:00:Thread#-1:Scheduler: using testitem #10 for thread -1
+2021-03-08T10:28:44.7133103-03:00:Thread#-1:Scheduler: Test #10 is scheduled for thread
+2021-03-08T10:28:44.7143098-03:00:Thread#-1: Test #10/0 is started on thread #-1
+2021-03-08T10:28:44.7143098-03:00:Thread#-1: Test #10/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7143098-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7143098-03:00:Thread#:Scheduler: testitem #11 from normal test queue 
+2021-03-08T10:28:44.7143098-03:00:Thread#-1:Scheduler: considering testitem #11 for thread -1
+2021-03-08T10:28:44.7143098-03:00:Thread#-1:Scheduler: using testitem #11 for thread -1
+2021-03-08T10:28:44.7143098-03:00:Thread#-1:Scheduler: Test #11 is scheduled for thread
+2021-03-08T10:28:44.7143098-03:00:Thread#-1: Test #11/0 is started on thread #-1
+2021-03-08T10:28:44.7143098-03:00:Thread#-1: Test #11/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#:Scheduler: testitem #12 from normal test queue 
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: considering testitem #12 for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: using testitem #12 for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: Test #12 is scheduled for thread
+2021-03-08T10:28:44.7153064-03:00:Thread#-1: Test #12/0 is started on thread #-1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1: Test #12/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#:Scheduler: testitem #13 from normal test queue 
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: considering testitem #13 for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: using testitem #13 for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: Test #13 is scheduled for thread
+2021-03-08T10:28:44.7153064-03:00:Thread#-1: Test #13/0 is started on thread #-1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1: Test #13/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#:Scheduler: testitem #14 from normal test queue 
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: considering testitem #14 for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: using testitem #14 for thread -1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1:Scheduler: Test #14 is scheduled for thread
+2021-03-08T10:28:44.7153064-03:00:Thread#-1: Test #14/0 is started on thread #-1
+2021-03-08T10:28:44.7153064-03:00:Thread#-1: Test #14/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#:Scheduler: testitem #15 from normal test queue 
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: considering testitem #15 for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: using testitem #15 for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: Test #15 is scheduled for thread
+2021-03-08T10:28:44.7163042-03:00:Thread#-1: Test #15/0 is started on thread #-1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1: Test #15/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#:Scheduler: testitem #16 from normal test queue 
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: considering testitem #16 for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: using testitem #16 for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: Test #16 is scheduled for thread
+2021-03-08T10:28:44.7163042-03:00:Thread#-1: Test #16/0 is started on thread #-1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1: Test #16/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#:Scheduler: testitem #17 from normal test queue 
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: considering testitem #17 for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: using testitem #17 for thread -1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: Test #17 is scheduled for thread
+2021-03-08T10:28:44.7163042-03:00:Thread#-1: Test #17/0 is started on thread #-1
+2021-03-08T10:28:44.7163042-03:00:Thread#-1: Test #17/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7163042-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#:Scheduler: testitem #18 from normal test queue 
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: considering testitem #18 for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: using testitem #18 for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: Test #18 is scheduled for thread
+2021-03-08T10:28:44.7173031-03:00:Thread#-1: Test #18/0 is started on thread #-1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1: Test #18/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#:Scheduler: testitem #19 from normal test queue 
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: considering testitem #19 for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: using testitem #19 for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: Test #19 is scheduled for thread
+2021-03-08T10:28:44.7173031-03:00:Thread#-1: Test #19/0 is started on thread #-1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1: Test #19/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#:Scheduler: testitem #20 from normal test queue 
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: considering testitem #20 for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: using testitem #20 for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: Test #20 is scheduled for thread
+2021-03-08T10:28:44.7173031-03:00:Thread#-1: Test #20/0 is started on thread #-1
+2021-03-08T10:28:44.7173031-03:00:Thread#-1: Test #20/0 is finished on thread #-1 as Skipped within 0 seconds
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T10:28:44.7173031-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-08T10:28:44.7173031-03:00:Thread#-1:Scheduler: enumerator for thread is at end
+2021-03-08T10:28:44.7322930-03:00;Thread#14;Info;test run finished
+2021-03-08T10:28:44.7322930-03:00;Thread#14;Info;publishing test results
+2021-03-08T10:28:44.7722704-03:00;Thread#14;Info;test results published
+2021-03-08T10:28:44.7722704-03:00;Thread#14;Info;generating reports
+2021-03-08T10:28:44.8652116-03:00;Thread#14;Info;Starting external report generation process
+2021-03-08T10:28:46.2984648-03:00;Thread#14;Info;Successfully generated reports.
+2021-03-08T10:28:46.2994636-03:00;Thread#14;Info;Successfully generated reports
+2021-03-08T10:28:46.3084586-03:00:Total: 17 (test executions: 21)
+2021-03-08T10:28:46.3104636-03:00:Succeeded: 3
+2021-03-08T10:28:46.3104636-03:00:Ignored: 0
+2021-03-08T10:28:46.3104636-03:00:Pending: 0
+2021-03-08T10:28:46.3104636-03:00:Skipped: 11
+2021-03-08T10:28:46.3114581-03:00:Failed: 3
+2021-03-08T10:28:46.3204510-03:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-03-08T10:28:46.3204510-03:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-08T102841.html'
+========== End of log file ==========

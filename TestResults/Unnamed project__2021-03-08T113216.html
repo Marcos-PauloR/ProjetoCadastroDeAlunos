@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>Unnamed project Test Execution Report</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript">
+            /**
+            * jQuery.fn.sortElements
+            * --------------
+            * #author James Padolsey (http://james.padolsey.com)
+            * #version 0.11
+            * #updated 18-MAR-2010
+            * #url https://raw.github.com/jamespadolsey/jQuery-Plugins/master/sortElements/jquery.sortElements.js
+            * --------------
+            * #param Function comparator:
+            *   Exactly the same behaviour as [1,2,3].sort(comparator)
+            *   
+            * #param Function getSortable
+            *   A function that should return the element that is
+            *   to be sorted. The comparator will run on the
+            *   current collection, but you may want the actual
+            *   resulting sort to occur on a parent or another
+            *   associated element.
+            *   
+            *   E.g. $('td').sortElements(comparator, function(){
+            *      return this.parentNode; 
+            *   })
+            *   
+            *   The <td>'s parent (<tr>) will be sorted instead
+            *   of the <td> itself.
+            */
+            jQuery.fn.sortElements = (function () {
+
+                var sort = [].sort;
+
+                return function (comparator, getSortable) {
+
+                    getSortable = getSortable || function () { return this; };
+
+                    var placements = this.map(function () {
+
+                        var sortElement = getSortable.call(this),
+                parentNode = sortElement.parentNode,
+
+                        // Since the element itself will change position, we have
+                        // to have some way of storing it's original position in
+                        // the DOM. The easiest way is to have a 'flag' node:
+                nextSibling = parentNode.insertBefore(
+                    document.createTextNode(''),
+                    sortElement.nextSibling
+                );
+
+                        return function () {
+
+                            if (parentNode === this) {
+                                throw new Error(
+                        "You can't sort elements if any one is a descendant of another."
+                    );
+                            }
+
+                            // Insert before flag:
+                            parentNode.insertBefore(this, nextSibling);
+                            // Remove flag:
+                            parentNode.removeChild(nextSibling);
+
+                        };
+
+                    });
+
+                    return sort.call(this, comparator).each(function (i) {
+                        placements[i].call(getSortable.call(this));
+                    });
+
+                };
+
+            })();
+        </script>
+        <script type="text/javascript">
+            jQuery.fn.setBarSizes = (function () {
+                return function (metricName, maxBarSize, min) {
+                    var max = Math.max.apply(Math, $.makeArray($(this).map(function () { return Number($(this).attr('data-sr-' + metricName)); })));
+                    var scale = 1.0;
+                    while (max > 0.0 && max <= 10.0) {
+                        scale = scale * 10.0;
+                        max = max * 10.0;
+                    }
+                    max = (Math.ceil(max / 2) * 2) / scale;
+
+                    this.each(function () {
+                        var barAnchor = $(this).find('a');
+                        var actual = $(this).attr('data-sr-' + metricName);
+                        var newHeight = Math.max(Math.round(maxBarSize * (actual - min) / (max - min)), 2);
+                        barAnchor.css({ height: newHeight });
+                    });
+
+                    var unit = "";
+                    if (metricName.substr(metricName.length - 4, 4) === "time")
+                        unit = "s";
+
+                    $('#testview .scale-min-label').each(function () {
+                        $(this).text(min.toString() + unit);
+                    });
+                    $('#testview .scale-max-label').each(function () {
+                        $(this).text(max.toString() + unit);
+                    });
+                    var mid = max / 2;
+                    $('#testview .scale-mid-label').each(function () {
+                        $(this).text(mid.toString() + unit);
+                    });
+                };
+            })();
+
+            function getComparer(metricName, isDesc) {
+                return function (a, b) {
+                    var aNumber = Number($(a).attr('data-sr-' + metricName));
+                    var bNumber = Number($(b).attr('data-sr-' + metricName));
+                    var result = aNumber > bNumber ? 1 : (aNumber < bNumber ? -1 : 0);
+                    if (isDesc)
+                        result = -1 * result;
+
+                    if (result == 0 && metricName != "order")
+                        result = getComparer("order", false)(a, b);
+
+                    return result;
+                };
+            }
+
+            var currentSort = "";
+            function doSort(allowToggleDesc) {
+                var newSort = $("input[name='barSortOrder']:checked").val();
+                if (allowToggleDesc && currentSort == newSort) {
+                    $('#barSortDesc').click();
+                    doSort(false);
+                    return;
+                }
+                currentSort = newSort;
+                $('#testview td.testview-item').sortElements(getComparer(newSort, $('#barSortDesc').is(':checked')));
+            }
+
+
+            function doSetHeights(allowSort) {
+                var selectedMetric = $("input[name='barHeight']:checked").val();
+                $('#testview td.testview-item').setBarSizes(selectedMetric, 60, 0.0);
+
+                if (allowSort && currentSort != selectedMetric) {
+                    var $radios = $("input[name='barSortOrder']");
+                    $radios.filter('[value=' + selectedMetric + ']').attr('checked', true);
+                    $("#barSortDesc").attr("checked", [true]);
+                    doSort(false);
+                }
+            }
+
+            $(document).ready(function () {
+                $("input[name='barSortOrder']").click(function () { doSort(true); return true; });
+                $("input[name='barSortDesc']").change(function () { doSort(false); });
+                $("input[name='barHeight']").change(function () { doSetHeights(true); });
+
+                doSort(false);
+                doSetHeights(false);
+
+                $("div.scrollable").css({ 'overflow': 'auto' });
+            });
+        </script>
+
+        <style type="text/css">
+            body 
+            {
+                color: #000000;
+                font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+                line-height: 130%;
+            }
+            h1 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 170%;
+                font-weight: bold;
+            }            
+            h2 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 130%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            h3 {
+                font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;
+                font-size: 120%;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }            
+            a.bar
+            {
+                text-decoration: none;
+                display: block;
+                line-height: 1px;
+            }
+            .description
+            {
+                font-style: italic;
+            }
+            .log 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                display: block;
+                margin: 0px;
+            }
+            .errorMessage 
+            {
+                width: 600px;
+                color: Red;
+                font-weight: bold;
+            }
+            .stackTrace 
+            {
+                width: 600px;
+                white-space: pre-wrap;
+                font-style: italic;
+                color: Red;
+                display: block;
+            }
+            table.testEvents
+            {
+                border: solid 1px #e8eef4;
+                border-collapse: collapse;
+            }
+            table.testEvents td
+            {
+                vertical-align: top;
+                padding: 5px;
+                border: solid 1px #e8eef4;
+            }
+            table.testEvents th
+            {
+                padding: 6px 5px;
+                text-align: left;
+                background-color: #e8eef4;
+                border: solid 1px #e8eef4;                
+            }
+            .comment
+            {
+                font-style: italic;
+                font-size: smaller;
+            }
+            .startupBar
+            {
+                background-color: #EEEEEE;
+                cursor: default;
+            }
+            
+            .colorSucceeded
+            {
+                background-color: #90ED7B;
+            }
+            .colorIgnored
+            {
+                background-color: #FFFF85;
+            }
+            .colorPending
+            {
+                background-color: #D47BED;
+            }
+            .colorNothingToRun
+            {
+                background-color: #CCCCFF;
+            }
+            .colorSkipped
+            {
+                background-color: #CCCCFF;
+            }
+            .colorInconclusive
+            {
+                background-color: #7BEDED;
+            }
+            .colorCleanupFailed
+            {
+                background-color: #FFCCCC;
+            }
+            .colorRandomlyFailed
+            {
+                background-color: #EDB07B;
+            }
+            .colorFailed
+            {
+                background-color: #ED5F5F;
+            }
+            .colorInitializationFailed
+            {
+                background-color: #FF0000;
+            }
+            .colorFrameworkError
+            {
+                background-color: #FF0000;
+            }
+            ul.subNodeLinks
+            {
+                padding-left: 20px;
+                margin: 0px;
+            }
+            ul.subNodeLinks li
+            {
+                list-style: none;
+            }
+            
+            /* views general */
+            div.scrollable
+            {
+                /*overflow: auto; - thsi has to be set from js, because of an IE9 bug */
+            }
+            div.viewbox
+            {
+                position: relative;
+                border: 3px solid #e8eef4;
+            }
+            div.viewbox table
+            {
+                border: 0px;
+            }
+                        
+            /* testview */
+            #testview
+            {
+                padding-top: 23px;
+            }
+            
+            table.testview-items td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 1px;
+            }
+            td.right-padding, td.left-padding
+            {
+                width: 25px;
+                min-width: 25px;
+            }
+            table.testview-items a.bar
+            {
+                width: 5px;
+            }
+            table.testview-items tr.testview-items-row
+            {
+                height: 60px;
+            }
+            
+            /* scale */
+            table.vertical-scale 
+            {
+                position: absolute;
+                top: 23px;
+                left: 0px;
+                width: 100%;
+                z-index: -100;
+            }
+            table.vertical-scale td, tr.horizontal-scale td
+            {
+                font-size: 60%;
+                line-height: normal;
+            }
+            table.vertical-scale tr.scale-max, table.vertical-scale tr.scale-mid 
+            {
+                height: 30px;
+            }
+            tr.horizontal-scale, table.vertical-scale tr.scale-min 
+            {
+                height: 12px;
+            }
+            
+            td.scale-max-label, td.scale-mid-label, td.scale-min-label
+            {
+                border-top: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: top;
+            }
+            td.scale-10-label
+            {
+                border-left: solid 1px #E6E6E6;
+                text-align: left;
+                vertical-align: bottom;
+                padding-left: 1px;
+            }
+            tr.scale-mid td, tr.scale-min td, tr.scale-max td
+            {
+                border-top: solid 1px #E6E6E6;
+            }
+           
+            
+            /* bar-control */
+            #bar-control
+            {
+                font-size: 60%;
+                line-height: normal;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            #bar-control label
+            {
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            #bar-control .option
+            {
+                vertical-align: middle;
+                text-transform: lowercase;
+            }
+            #bar-control input[type="checkbox"]
+            {
+                padding: 0 2px 0 3px;
+            }
+            #bar-control input
+            {
+                vertical-align: top;
+                height: 12px;
+                margin: 0px;
+                padding: 0px;
+            }
+            #bar-control div
+            {
+                float: right;
+                margin: 3px 5px 3px 5px;
+            }
+
+            /* timeline view */
+            #timelineview
+            {
+                padding-top: 5px;
+            }
+            table.timelineview a
+            {
+                height: 20px;
+            }
+            table.timelineview td
+            {
+                vertical-align: bottom;
+                padding: 0px 1px 0px 0px;
+                border: 0px;
+            }
+            tr.thread-items-row
+            {
+                height: 25px;
+            }
+            tr.thread-items-row td
+            {
+                vertical-align: bottom;
+            }
+            td.thread-label
+            {
+                padding: 0px 6px 0px 6px;
+                text-align: right;
+                line-height: 18px;
+                vertical-align: bottom;
+            }
+            th.thread-label
+            {
+                padding: 3px 6px 0px 6px;
+                line-height: 18px;
+                text-align: left;
+                vertical-align: bottom;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>Unnamed project Test Execution Report</h1>
+        
+    <ul>
+        <li>Project: Unnamed project</li>
+        <li>Configuration: </li>
+        <li>Test Assemblies: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll</li>
+        <li>Start Time: 08/03/2021 11:32:17</li>
+        <li>Duration: 00:00:02.6025285</li>
+        <li>Test Threads: 1</li>
+    </ul>
+
+
+        <h2>Result: 3 failed</h2>
+        <table class="testEvents">
+                <tr>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <td>
+            50%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 32px;" 
+           title="3 succeeded" 
+                   ></a>
+    </td>
+    <td>
+        <a class="bar colorFailed" 
+           style="width: 32px;" 
+           title="3 failed" 
+                          href="#error_summary"
+        ></a>
+    </td>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 132px;" 
+           title="12 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>18 (test executions: 22)</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>12</td>
+
+        </table>
+        
+        <h2>Test Timeline Summary</h2>
+
+        <div id="timelineview" class="viewbox">
+            <div class="scrollable">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="thread-label" colspan="2">thread</th>
+                    </tr>
+                        <tr class="thread-items-row">
+                            <td class="thread-label" title="Machine: DESKTOP-OJBJSH6">#0</td>
+                            <td colspan="2">
+                                <table class="timelineview" cellpadding="0" cellspacing="0">
+                                    <tr>
+
+                                            <td>
+        <a
+            class="bar startupBar" 
+            style="width: 20px;" 
+                title="test thread startup" 
+        >&nbsp;</a>
+    </td>
+
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 43px;" 
+                title="Adicionar aluno na Lista (in Repositorio aluno)" 
+                href="#t-2003794147.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 17px;" 
+                title="Adicionar aluno, 123 (in Repositorio aluno)" 
+                href="#t111101545.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 3px;" 
+                title="Adicionar aluno, 123 (in Repositorio aluno) retry #1" 
+                href="#t111101545.1"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 3px;" 
+                title="Adicionar aluno, 123 (in Repositorio aluno) retry #2" 
+                href="#t111101545.2"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 3px;" 
+                title="Adicionar aluno, 12345 (in Repositorio aluno)" 
+                href="#t5394454.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorSucceeded" 
+            style="width: 3px;" 
+                title="Remover alunos (in Repositorio aluno)" 
+                href="#t-1826834604.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 3px;" 
+                title="Remover Aluno, 123 (in Repositorio aluno)" 
+                href="#t536738125.0"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 3px;" 
+                title="Remover Aluno, 123 (in Repositorio aluno) retry #1" 
+                href="#t536738125.1"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 3px;" 
+                title="Remover Aluno, 123 (in Repositorio aluno) retry #2" 
+                href="#t536738125.2"
+        >&nbsp;</a>
+    </td>
+    <td>
+        <a
+            class="bar colorFailed" 
+            style="width: 3px;" 
+                title="Remover Aluno, 12345 (in Repositorio aluno)" 
+                href="#t675838362.0"
+        >&nbsp;</a>
+    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="horizontal-scale">
+                        <td>&nbsp;</td>
+                            <td class="scale-10-label" style="width: 118px;min-width: 118px;">0s</td>
+                        <td class="scale-10-label">2s</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        
+    <h2>Test Result View</h2>
+    <div id="testview" class="viewbox">
+        <div id="bar-control">
+            <div id="bar-control-sort">
+                <label>sort by:</label>
+                <span class="option"><input type="radio" name="barSortOrder" value="exectime" />Time</span>
+                <span class="option"><input type="radio" name="barSortOrder" value="acttime" />Act Time</span>
+                <span class="option"><input type="radio" name="barSortOrder" value="order" />Execution</span>
+                <span class="option"><input type="radio" name="barSortOrder" value="rescode" checked="checked" />Result</span>
+                <span class="option"><input type="checkbox" name="barSortDesc" id="barSortDesc" checked="checked" />desc</span>
+            </div>
+            <div id="bar-control-heights">
+                <label>heights:</label>
+                <span class="option"><input type="radio" checked="checked" name="barHeight" value="exectime" />Time</span>
+                <span class="option"><input type="radio" name="barHeight" value="acttime" />Act Time</span>
+            </div>
+        </div>
+        <table class="vertical-scale" cellpadding="0" cellspacing="0">
+            <tr class="scale-max">
+                <td class="left-padding scale-max-label">&nbsp;</td>
+                <td colspan="22">&nbsp;</td>
+                <td class="right-padding">&nbsp;</td>
+            </tr>
+            <tr class="scale-mid">
+                <td class="left-padding scale-mid-label">&nbsp;</td>
+                <td colspan="22">&nbsp;</td>
+                <td class="right-padding">&nbsp;</td>
+            </tr>
+            <tr class="scale-min">
+                <td class="left-padding scale-min-label">&nbsp;</td>
+                <td colspan="22">&nbsp;</td>
+                <td class="right-padding">&nbsp;</td>
+            </tr>
+        </table>
+        <div class="scrollable">
+            <table class="testview-items" cellpadding="0" cellspacing="0">
+                <tr class="testview-items-row">
+                    <td class="left-padding">&nbsp;</td>
+    <td class="testview-item" 
+        data-sr-exectime="0.0419745" data-sr-rescode="110" data-sr-order="0" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 8px;"
+            title="Adicionar aluno na Lista (in Repositorio aluno)"
+            href="#t-2003794147.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.1239429" data-sr-rescode="110" data-sr-order="4" data-sr-acttime="0.061">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 25px;"
+            title="Adicionar aluno, 12345 (in Repositorio aluno)"
+            href="#t5394454.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.0029991" data-sr-rescode="110" data-sr-order="5" data-sr-acttime="0.0">
+        <a
+            class="bar colorSucceeded" 
+            style="height: 2px;"
+            title="Remover alunos (in Repositorio aluno)"
+            href="#t-1826834604.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="10" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Alterar aluno na lista (in Repositorio aluno)"
+            href="#t-1681662320.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="11" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Alterar aluno, 43201857 (in Repositorio aluno)"
+            href="#t-1638566860.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="12" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Alterar aluno, 475089110 (in Repositorio aluno)"
+            href="#t931647283.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="13" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Alterar aluno, 745118505 (in Repositorio aluno)"
+            href="#t1001690510.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="14" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Alterar aluno, 24450275 (in Repositorio aluno)"
+            href="#t2126145359.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="15" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Alterar aluno, 548808454 (in Repositorio aluno)"
+            href="#t-608372040.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="16" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Listar alunos (in Repositorio aluno)"
+            href="#t577103943.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="17" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Busca por parte do nome na lista (in Repositorio aluno)"
+            href="#t1787237783.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="18" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Buscar por qualquer parte do nome, aulo (in Repositorio aluno)"
+            href="#t19423914.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="19" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Busco por numero de matricula do aluno (in Repositorio aluno)"
+            href="#t-80731774.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="20" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Buscar aluno pela matricula, 428987363 (in Repositorio aluno)"
+            href="#t-1893921857.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0" data-sr-rescode="420" data-sr-order="21" data-sr-acttime="0.0">
+        <a
+            class="bar colorSkipped" 
+            style="height: 2px;"
+            title="Buscar aluno pela matricula, 459418897 (in Repositorio aluno)"
+            href="#t-57761272.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.2998163" data-sr-rescode="540" data-sr-order="1" data-sr-acttime="0.184">
+        <a
+            class="bar colorFailed" 
+            style="height: 60px;"
+            title="Adicionar aluno, 123 (in Repositorio aluno)"
+            href="#t111101545.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.0119922" data-sr-rescode="540" data-sr-order="2" data-sr-acttime="0.009">
+        <a
+            class="bar colorFailed" 
+            style="height: 2px;"
+            title="Adicionar aluno, 123 (in Repositorio aluno) retry #1"
+            href="#t111101545.1">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.0159997" data-sr-rescode="540" data-sr-order="3" data-sr-acttime="0.008">
+        <a
+            class="bar colorFailed" 
+            style="height: 3px;"
+            title="Adicionar aluno, 123 (in Repositorio aluno) retry #2"
+            href="#t111101545.2">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.0310438" data-sr-rescode="540" data-sr-order="6" data-sr-acttime="0.009">
+        <a
+            class="bar colorFailed" 
+            style="height: 6px;"
+            title="Remover Aluno, 123 (in Repositorio aluno)"
+            href="#t536738125.0">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.0320729" data-sr-rescode="540" data-sr-order="7" data-sr-acttime="0.01">
+        <a
+            class="bar colorFailed" 
+            style="height: 6px;"
+            title="Remover Aluno, 123 (in Repositorio aluno) retry #1"
+            href="#t536738125.1">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.0239892" data-sr-rescode="540" data-sr-order="8" data-sr-acttime="0.01">
+        <a
+            class="bar colorFailed" 
+            style="height: 5px;"
+            title="Remover Aluno, 123 (in Repositorio aluno) retry #2"
+            href="#t536738125.2">&nbsp;</a>
+    </td>
+    <td class="testview-item" 
+        data-sr-exectime="0.0259839" data-sr-rescode="540" data-sr-order="9" data-sr-acttime="0.011">
+        <a
+            class="bar colorFailed" 
+            style="height: 5px;"
+            title="Remover Aluno, 12345 (in Repositorio aluno)"
+            href="#t675838362.0">&nbsp;</a>
+    </td>
+                    <td class="right-padding">&nbsp;</td>
+                </tr>
+                <tr class="horizontal-scale">
+                    <td class="left-padding">&nbsp;</td>
+                    <td colspan="10">&nbsp;</td>
+                        <td class="scale-10-label" colspan="10">10</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+        
+        
+    <h2>Feature Summary</h2>
+    <table class="testEvents">
+            <tr>
+            <th>Feature</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+
+            <tr>
+                <td><a href="#f1942501048">Repositorio aluno</a></td>
+                    <td>
+            30%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 32px;" 
+           title="3 succeeded" 
+                   ></a>
+    </td>
+    <td>
+        <a class="bar colorFailed" 
+           style="width: 77px;" 
+           title="3 failed" 
+                          href="#error_summary"
+        ></a>
+    </td>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 132px;" 
+           title="12 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>18 (test executions: 22)</td>
+    <td>3</td>
+    <td>7</td>
+    <td>0</td>
+    <td>0</td>
+    <td>12</td>
+        <td>00:00:00.6098145</td>
+
+            </tr>
+    </table>
+
+
+        <a name="error_summary" />
+        <h2>Error Summary</h2>
+        <table class="testEvents">
+                <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+    </tr>
+
+                <tr>
+                    <td>
+                        <a href="#t111101545.0">Adicionar aluno, 123 (in EM.Repository.Tests, Repositorio aluno)</a>
+                            <a href="#t111101545.1">retry #1</a>
+                            <a href="#t111101545.2">retry #2</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorFailed" 
+           style="width: 599px;" 
+           title="1 failed" 
+                          href="#error_summary"
+        ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1 (test executions: 3)</td>
+    <td>0</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: Cpf Invalido</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t536738125.0">Remover Aluno, 123 (in EM.Repository.Tests, Repositorio aluno)</a>
+                            <a href="#t536738125.1">retry #1</a>
+                            <a href="#t536738125.2">retry #2</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorFailed" 
+           style="width: 599px;" 
+           title="1 failed" 
+                          href="#error_summary"
+        ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1 (test executions: 3)</td>
+    <td>0</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: A sequ&#234;ncia n&#227;o cont&#233;m elementos</div></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#t675838362.0">Remover Aluno, 12345 (in EM.Repository.Tests, Repositorio aluno)</a>
+                    </td>
+                        <td>
+            0%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorFailed" 
+           style="width: 199px;" 
+           title="1 failed" 
+                          href="#error_summary"
+        ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding-left: 20px;"><div class="errorMessage">Error: A sequ&#234;ncia n&#227;o cont&#233;m elementos</div></td>
+                </tr>
+        </table>
+
+        <h2>Scenario Summary</h2>
+            <a name="f1942501048" />
+            <h3>Feature: Repositorio aluno</h3>
+                <div class="description"><pre>	Simple calculator for adding two numbers</pre>
+                </div>
+            <table class="testEvents">
+                    <tr>
+            <th>Test</th>
+        <th colspan="2">Success rate</th>
+        <th>Tests</th>
+        <th>Succeeded</th>
+        <th>Failed</th>
+        <th>Pending</th>
+        <th>Ignored</th>
+        <th>Skipped</th>
+            <th>Duration</th>
+    </tr>
+
+                    <tr>
+                        <td>
+                                    <a href="#t-2003794147.0">Scenario: Adicionar aluno na Lista</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:00.0419745</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t111101545.0">Scenario: Adicionar aluno, 123</a>
+            <a href="#t111101545.1">retry #1</a>
+            <a href="#t111101545.2">retry #2</a>
+
+                        </td>
+                        
+                            <td>
+            0%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorFailed" 
+           style="width: 599px;" 
+           title="1 failed" 
+                          href="#error_summary"
+        ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1 (test executions: 3)</td>
+    <td>0</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:00.3278082</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t5394454.0">Scenario: Adicionar aluno, 12345</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:00.1239429</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1826834604.0">Scenario: Remover alunos</a>
+
+                        </td>
+                        
+                            <td>
+            100%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSucceeded" 
+           style="width: 199px;" 
+           title="1 succeeded" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:00.0029991</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t536738125.0">Scenario: Remover Aluno, 123</a>
+            <a href="#t536738125.1">retry #1</a>
+            <a href="#t536738125.2">retry #2</a>
+
+                        </td>
+                        
+                            <td>
+            0%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorFailed" 
+           style="width: 599px;" 
+           title="1 failed" 
+                          href="#error_summary"
+        ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1 (test executions: 3)</td>
+    <td>0</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:00.0871059</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t675838362.0">Scenario: Remover Aluno, 12345</a>
+
+                        </td>
+                        
+                            <td>
+            0%
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorFailed" 
+           style="width: 199px;" 
+           title="1 failed" 
+                          href="#error_summary"
+        ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+        <td>00:00:00.0259839</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1681662320.0">Scenario: Alterar aluno na lista</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1638566860.0">Scenario: Alterar aluno, 43201857</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t931647283.0">Scenario: Alterar aluno, 475089110</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1001690510.0">Scenario: Alterar aluno, 745118505</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t2126145359.0">Scenario: Alterar aluno, 24450275</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-608372040.0">Scenario: Alterar aluno, 548808454</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t577103943.0">Scenario: Listar alunos</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t1787237783.0">Scenario: Busca por parte do nome na lista</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t19423914.0">Scenario: Buscar por qualquer parte do nome, aulo</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-80731774.0">Scenario: Busco por numero de matricula do aluno</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-1893921857.0">Scenario: Buscar aluno pela matricula, 428987363</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                                    <a href="#t-57761272.0">Scenario: Buscar aluno pela matricula, 459418897</a>
+
+                        </td>
+                        
+                            <td>
+            n/a
+    </td>
+    <td>
+            <table class="timelineview" cellpadding="0" cellspacing="0">
+        <tr>
+    <td>
+        <a class="bar colorSkipped" 
+           style="width: 199px;" 
+           title="1 skipped" 
+                   ></a>
+    </td>
+        </tr>
+    </table>
+
+    </td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+        <td>00:00:00</td>
+
+                        
+                    </tr>
+            </table>
+
+        <h2>Execution Details</h2>
+            <a name="t-2003794147.0" />
+            <h3>Scenario: Adicionar aluno na Lista (in EM.Repository.Tests, Repositorio aluno)</h3>
+                <div class="description">
+                    tags: mytag
+                </div>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,0419745</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t111101545.0" />
+            <h3>Scenario: Adicionar aluno, 123 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,2998163</li>
+                <li>Thread: #0</li>
+                <li>Error: Cpf Invalido</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado O nome &#233; Paulo</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoONome(&quot;Paulo&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.093s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Matricula &#233; 123</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoMatriculaE(123) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.002s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Nascimento 29/05/2000</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoNascimento(&quot;29/05/2000&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.004s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Sexo Masculino</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoSexo(&quot;Masculino&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Cpf</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoCpf(&quot;&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.001s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando Adicionar dados na lista</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">error: Cpf Invalido (0,2s)</pre>
+                                <div class="errorMessage">Cpf Invalido</div>
+                                <pre class="stackTrace">System.Exception: Cpf Invalido
+   em EM.Repository.RepositorioAluno.Add(Aluno aluno) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository\RepositorioAluno.cs:linha 105
+   em EM.Repository.Tests.Steps.InserirDadosNaTabelaSteps.QuandoAdicionarDadosNaLista() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Steps\InserirAluno.cs:linha 48
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.ScenarioCleanup()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.AdicionarAluno(String matricula, String nome, String nascimento, String sexo, String cpf, String[] exampleTags) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 14
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.AdicionarAluno_123() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 7
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestNodeTask.Execute()</pre>
+                        </td>
+                        <td>Failed in 0.184s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao vejo que aluno foi inserido com sucesso</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0.01s</td>
+                    </tr>
+            </table>
+            <a name="t111101545.1" />
+            <h3>Scenario: Adicionar aluno, 123 (in EM.Repository.Tests, Repositorio aluno) retry #1</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,0119922</li>
+                <li>Thread: #0</li>
+                <li>Error: Cpf Invalido</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado O nome &#233; Paulo</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoONome(&quot;Paulo&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Matricula &#233; 123</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoMatriculaE(123) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.001s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Nascimento 29/05/2000</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoNascimento(&quot;29/05/2000&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Sexo Masculino</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoSexo(&quot;Masculino&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.001s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Cpf</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoCpf(&quot;&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando Adicionar dados na lista</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">error: Cpf Invalido (0,0s)</pre>
+                                <div class="errorMessage">Cpf Invalido</div>
+                                <pre class="stackTrace">System.Exception: Cpf Invalido
+   em EM.Repository.RepositorioAluno.Add(Aluno aluno) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository\RepositorioAluno.cs:linha 105
+   em EM.Repository.Tests.Steps.InserirDadosNaTabelaSteps.QuandoAdicionarDadosNaLista() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Steps\InserirAluno.cs:linha 48
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.ScenarioCleanup()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.AdicionarAluno(String matricula, String nome, String nascimento, String sexo, String cpf, String[] exampleTags) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 14
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.AdicionarAluno_123() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 7
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestNodeTask.Execute()</pre>
+                        </td>
+                        <td>Failed in 0.009s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao vejo que aluno foi inserido com sucesso</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+            </table>
+            <a name="t111101545.2" />
+            <h3>Scenario: Adicionar aluno, 123 (in EM.Repository.Tests, Repositorio aluno) retry #2</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,0159997</li>
+                <li>Thread: #0</li>
+                <li>Error: Cpf Invalido</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado O nome &#233; Paulo</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoONome(&quot;Paulo&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Matricula &#233; 123</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoMatriculaE(123) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Nascimento 29/05/2000</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoNascimento(&quot;29/05/2000&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.006s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Sexo Masculino</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoSexo(&quot;Masculino&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.001s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Cpf</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoCpf(&quot;&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando Adicionar dados na lista</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">error: Cpf Invalido (0,0s)</pre>
+                                <div class="errorMessage">Cpf Invalido</div>
+                                <pre class="stackTrace">System.Exception: Cpf Invalido
+   em EM.Repository.RepositorioAluno.Add(Aluno aluno) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository\RepositorioAluno.cs:linha 105
+   em EM.Repository.Tests.Steps.InserirDadosNaTabelaSteps.QuandoAdicionarDadosNaLista() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Steps\InserirAluno.cs:linha 48
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.ScenarioCleanup()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.AdicionarAluno(String matricula, String nome, String nascimento, String sexo, String cpf, String[] exampleTags) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 14
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.AdicionarAluno_123() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 7
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestNodeTask.Execute()</pre>
+                        </td>
+                        <td>Failed in 0.008s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao vejo que aluno foi inserido com sucesso</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Adicionar aluno, 123] -->
+                            <pre class="log">skipped because of previous errors</pre>
+                        </td>
+                        <td>Skipped in 0s</td>
+                    </tr>
+            </table>
+            <a name="t5394454.0" />
+            <h3>Scenario: Adicionar aluno, 12345 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,1239429</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado O nome &#233; Paty</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 12345] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoONome(&quot;Paty&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.001s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Matricula &#233; 12345</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 12345] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoMatriculaE(12345) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Nascimento 08/04/1998</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 12345] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoNascimento(&quot;08/04/1998&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.001s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Sexo Feminino</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 12345] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoSexo(&quot;Feminino&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">E Cpf 65473348050</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Adicionar aluno, 12345] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.DadoCpf(&quot;65473348050&quot;) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando Adicionar dados na lista</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Adicionar aluno, 12345] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.QuandoAdicionarDadosNaLista() (0,1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.061s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao vejo que aluno foi inserido com sucesso</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Adicionar aluno, 12345] -->
+                            <pre class="log">done: InserirDadosNaTabelaSteps.EntaoVejoQueAlunoFoiInseridoComSucesso() (0,1s)</pre>
+                        </td>
+                        <td>Succeeded in 0.059s</td>
+                    </tr>
+            </table>
+            <a name="t-1826834604.0" />
+            <h3>Scenario: Remover alunos (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Succeeded</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,0029991</li>
+                <li>Thread: #0</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t536738125.0" />
+            <h3>Scenario: Remover Aluno, 123 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,0310438</li>
+                <li>Thread: #0</li>
+                <li>Error: A sequ&#234;ncia n&#227;o cont&#233;m elementos</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado Que a Matricula &#233; 123</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">done: RemoverAluno.DadoQueAMatriculaE(123) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.003s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando Remover aluno da lista</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.009s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao vejo que aluno foi removido com sucesso</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">error: A sequ&#234;ncia n&#227;o cont&#233;m elementos (0,0s)</pre>
+                                <div class="errorMessage">A sequ&#234;ncia n&#227;o cont&#233;m elementos</div>
+                                <pre class="stackTrace">System.InvalidOperationException: A sequ&#234;ncia n&#227;o cont&#233;m elementos
+   em System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   em EM.Repository.RepositorioAluno.GetByMatricula(Int32 matricula) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository\RepositorioAluno.cs:linha 41
+   em EM.Repository.Tests.Features.RemoverAluno.EntaoVejoQueAlunoFoiRemovidoComSucesso() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Steps\RemoverAluno.cs:linha 29
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.ScenarioCleanup()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.RemoverAluno(String matricula, String[] exampleTags) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 26
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.RemoverAluno_123() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 23
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestNodeTask.Execute()</pre>
+                        </td>
+                        <td>Failed in 0.016s</td>
+                    </tr>
+            </table>
+            <a name="t536738125.1" />
+            <h3>Scenario: Remover Aluno, 123 (in EM.Repository.Tests, Repositorio aluno) retry #1</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,0320729</li>
+                <li>Thread: #0</li>
+                <li>Error: A sequ&#234;ncia n&#227;o cont&#233;m elementos</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado Que a Matricula &#233; 123</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">done: RemoverAluno.DadoQueAMatriculaE(123) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.002s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando Remover aluno da lista</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.01s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao vejo que aluno foi removido com sucesso</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">error: A sequ&#234;ncia n&#227;o cont&#233;m elementos (0,0s)</pre>
+                                <div class="errorMessage">A sequ&#234;ncia n&#227;o cont&#233;m elementos</div>
+                                <pre class="stackTrace">System.InvalidOperationException: A sequ&#234;ncia n&#227;o cont&#233;m elementos
+   em System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   em EM.Repository.RepositorioAluno.GetByMatricula(Int32 matricula) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository\RepositorioAluno.cs:linha 41
+   em EM.Repository.Tests.Features.RemoverAluno.EntaoVejoQueAlunoFoiRemovidoComSucesso() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Steps\RemoverAluno.cs:linha 29
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.ScenarioCleanup()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.RemoverAluno(String matricula, String[] exampleTags) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 26
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.RemoverAluno_123() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 23
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestNodeTask.Execute()</pre>
+                        </td>
+                        <td>Failed in 0.019s</td>
+                    </tr>
+            </table>
+            <a name="t536738125.2" />
+            <h3>Scenario: Remover Aluno, 123 (in EM.Repository.Tests, Repositorio aluno) retry #2</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,0239892</li>
+                <li>Thread: #0</li>
+                <li>Error: A sequ&#234;ncia n&#227;o cont&#233;m elementos</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado Que a Matricula &#233; 123</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">done: RemoverAluno.DadoQueAMatriculaE(123) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.002s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando Remover aluno da lista</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.01s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao vejo que aluno foi removido com sucesso</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Remover Aluno, 123] -->
+                            <pre class="log">error: A sequ&#234;ncia n&#227;o cont&#233;m elementos (0,0s)</pre>
+                                <div class="errorMessage">A sequ&#234;ncia n&#227;o cont&#233;m elementos</div>
+                                <pre class="stackTrace">System.InvalidOperationException: A sequ&#234;ncia n&#227;o cont&#233;m elementos
+   em System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   em EM.Repository.RepositorioAluno.GetByMatricula(Int32 matricula) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository\RepositorioAluno.cs:linha 41
+   em EM.Repository.Tests.Features.RemoverAluno.EntaoVejoQueAlunoFoiRemovidoComSucesso() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Steps\RemoverAluno.cs:linha 29
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.ScenarioCleanup()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.RemoverAluno(String matricula, String[] exampleTags) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 26
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.RemoverAluno_123() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 23
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestNodeTask.Execute()</pre>
+                        </td>
+                        <td>Failed in 0.01s</td>
+                    </tr>
+            </table>
+            <a name="t675838362.0" />
+            <h3>Scenario: Remover Aluno, 12345 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Failed</li>
+                <li>Start time: 08/03/2021 11:32:18</li>
+                <li>Execution time (sec): 0,0259839</li>
+                <li>Thread: #0</li>
+                <li>Error: A sequ&#234;ncia n&#227;o cont&#233;m elementos</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Dado Que a Matricula &#233; 12345</pre>
+                        </td>
+                        <td>
+                            <!-- [TestArrange: Scenario - Remover Aluno, 12345] -->
+                            <pre class="log">done: RemoverAluno.DadoQueAMatriculaE(12345) (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.002s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Quando Remover aluno da lista</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAct: Scenario - Remover Aluno, 12345] -->
+                            <pre class="log">done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)</pre>
+                        </td>
+                        <td>Succeeded in 0.011s</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre class="log">Entao vejo que aluno foi removido com sucesso</pre>
+                        </td>
+                        <td>
+                            <!-- [TestAssert: Scenario - Remover Aluno, 12345] -->
+                            <pre class="log">error: A sequ&#234;ncia n&#227;o cont&#233;m elementos (0,0s)</pre>
+                                <div class="errorMessage">A sequ&#234;ncia n&#227;o cont&#233;m elementos</div>
+                                <pre class="stackTrace">System.InvalidOperationException: A sequ&#234;ncia n&#227;o cont&#233;m elementos
+   em System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   em EM.Repository.RepositorioAluno.GetByMatricula(Int32 matricula) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository\RepositorioAluno.cs:linha 41
+   em EM.Repository.Tests.Features.RemoverAluno.EntaoVejoQueAlunoFoiRemovidoComSucesso() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Steps\RemoverAluno.cs:linha 29
+   em lambda_method(Closure , IContextManager )
+   em TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   em TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecRun.SpecFlowPlugin.Runtime.RunnerTestExecutionEngine.OnAfterLastStep()
+   em TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.ScenarioCleanup()
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.RemoverAluno(String matricula, String[] exampleTags) na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 26
+   em EM.Repository.Tests.Features.RepositorioAlunoFeature.RemoverAluno_12345() na C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\Features\SpecFlowFeature1.feature:linha 23
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.ExecuteInternal(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TaskExecutors.StaticOrInstanceMethodExecutor.Execute(ITestThreadExecutionContext testThreadExecutionContext)
+   em TechTalk.SpecRun.Framework.TestNodeTask.Execute()</pre>
+                        </td>
+                        <td>Failed in 0.011s</td>
+                    </tr>
+            </table>
+            <a name="t-1681662320.0" />
+            <h3>Scenario: Alterar aluno na lista (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t-1638566860.0" />
+            <h3>Scenario: Alterar aluno, 43201857 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t931647283.0" />
+            <h3>Scenario: Alterar aluno, 475089110 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t1001690510.0" />
+            <h3>Scenario: Alterar aluno, 745118505 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t2126145359.0" />
+            <h3>Scenario: Alterar aluno, 24450275 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t-608372040.0" />
+            <h3>Scenario: Alterar aluno, 548808454 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t577103943.0" />
+            <h3>Scenario: Listar alunos (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t1787237783.0" />
+            <h3>Scenario: Busca por parte do nome na lista (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t19423914.0" />
+            <h3>Scenario: Buscar por qualquer parte do nome, aulo (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t-80731774.0" />
+            <h3>Scenario: Busco por numero de matricula do aluno (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t-1893921857.0" />
+            <h3>Scenario: Buscar aluno pela matricula, 428987363 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+            <a name="t-57761272.0" />
+            <h3>Scenario: Buscar aluno pela matricula, 459418897 (in EM.Repository.Tests, Repositorio aluno)</h3>
+            <ul>
+                <li>Status: Skipped</li>
+                <li>Start time: 08/03/2021 11:32:19</li>
+                <li>Execution time (sec): 0</li>
+                <li>Thread: #-1</li>
+            </ul>
+            <table class="testEvents">
+                <tr>
+                    <th>Steps</th>
+                    <th>Trace</th>
+                    <th>Result</th>
+                </tr>
+            </table>
+	</body>
+</html>

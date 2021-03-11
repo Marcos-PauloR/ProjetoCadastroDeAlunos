@@ -1,0 +1,154 @@
+﻿2021-03-05T09:14:02.0222545-03:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-03-05T09:14:02.0222545-03:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.7.3 in Framework clr40 in x86 mode execution started
+2021-03-05T09:14:02.0222545-03:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-03-05T09:14:02.0222545-03:00;VSTestExecutionThread;Info;Current UserName: 'Usuario', MachineName: 'DESKTOP-OJBJSH6'
+2021-03-05T09:14:02.0512384-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-05T09:14:02.0512384-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-05T09:14:02.0512384-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-05T09:14:02.0952116-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T091402.log
+2021-03-05T09:14:02.1022062-03:00;VSTestExecutionThread;Info;Checking activation
+2021-03-05T09:14:02.1691650-03:00;VSTestExecutionThread;Info;Activated.
+2021-03-05T09:14:02.1691650-03:00;VSTestExecutionThread;Info;Activation check completed
+2021-03-05T09:14:02.1691650-03:00;VSTestExecutionThread;Info;Starting test run
+2021-03-05T09:14:02.2081406-03:00;VSTestExecutionThread;Info;Discovering target: Default
+2021-03-05T09:14:02.2081406-03:00;VSTestExecutionThread;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-05T09:14:02.4875926-03:00;VSTestExecutionThread;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-05T09:14:04.1238391-03:00;VSTestExecutionThread;Info;test run finished
+2021-03-05T09:14:04.1238391-03:00;VSTestExecutionThread;Info;publishing test results
+2021-03-05T09:14:04.1648143-03:00;VSTestExecutionThread;Info;test results published
+2021-03-05T09:14:04.1658134-03:00;VSTestExecutionThread;Info;generating reports
+2021-03-05T09:14:04.2557579-03:00;VSTestExecutionThread;Info;Starting external report generation process
+2021-03-05T09:14:05.6091372-03:00;VSTestExecutionThread;Info;Successfully generated reports.
+2021-03-05T09:14:05.6111357-03:00;VSTestExecutionThread;Info;Successfully generated reports
+2021-03-05T09:14:05.6311219-03:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-03-05T09:14:05.6311219-03:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T091402.html'
+2021-03-05T09:14:05.6406147-03:00;VSTestExecutionThread;Info;Log file: file:///C:/Users/Usuario/source/repos/ProjetoFinal/TestResults/Unnamed%20project__2021-03-05T091402.log
+2021-03-05T09:14:05.6506094-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T09:14:05.6516079-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-05T09:14:05.6516079-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-05T09:14:05.6526075-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T091405.log
+2021-03-05T09:14:05.6536066-03:00;Thread#22;Info;Checking activation
+2021-03-05T09:14:05.6556051-03:00;Thread#22;Info;Activated.
+2021-03-05T09:14:05.6556051-03:00;Thread#22;Info;Activation check completed
+2021-03-05T09:14:05.6556051-03:00;Thread#22;Info;Starting test run
+2021-03-05T09:14:05.6596036-03:00;Thread#22;Info;Discovering target: Default
+2021-03-05T09:14:05.6596036-03:00;Thread#22;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T09:14:05.7459276-03:00;Thread#22;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T09:14:05.7459276-03:00:Test Suite Dump
+2021-03-05T09:14:05.7459276-03:00:#0: Unnamed project/ - 
+2021-03-05T09:14:05.7459276-03:00:#1: Default - 
+2021-03-05T09:14:05.7459276-03:00:#2: EM.Repository.Tests - 
+2021-03-05T09:14:05.7459276-03:00:#3: Inserir dados na tabela - 
+2021-03-05T09:14:05.7459276-03:00:#4: Adicionar aluno em lista vazia - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Adicionar+aluno+em+lista+vazia
+2021-03-05T09:14:05.7459276-03:00:End: Test Suite Dump
+2021-03-05T09:14:05.7459276-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T09:14:05.7459276-03:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2021-03-05T09:14:05.7459276-03:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-03-05T09:14:05.7459276-03:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-05T09:14:05.7469313-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-03-05T09:14:05.7469313-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-03-05T09:14:05.7469313-03:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-03-05T09:14:05.7469313-03:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-03-05T09:14:05.7469313-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-05T09:14:05.7469313-03:00:Thread #0: creating new test thread executor for EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-03-05T09:14:05.7469313-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-05T09:14:05.7469313-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-05T09:14:05.7469313-03:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2021-03-05T09:14:05.8558640-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
+2021-03-05T09:14:05.8628596-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-03-05T09:14:05.8658580-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T09:14:05.8658580-03:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-03-05T09:14:05.8678567-03:00:Thread#0:T:-> Using default config
+2021-03-05T09:14:06.0527410-03:00:Thread#0: Test #4/0 is started on thread #0
+2021-03-05T09:14:06.0747276-03:00:Thread#0:B:Dado Os dados a seguir
+2021-03-05T09:14:06.0747276-03:00:Thread#0:B:  --- table step argument ---
+2021-03-05T09:14:06.0747276-03:00:Thread#0:B:  | Matricula | Nome         | Nascimento | Sexo      | Cpf |
+2021-03-05T09:14:06.0757269-03:00:Thread#0:B:  | 123       | Jubisclaudio | 29/05/2000 | Masculino |     |
+2021-03-05T09:14:06.1356909-03:00:Thread#0:T:error: Referência de objeto não definida para uma instância de um objeto. (0,0s)
+2021-03-05T09:14:06.1366905-03:00:Thread#0:B:Quando Adicionar dados na lista
+2021-03-05T09:14:06.1376898-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1406878-03:00:Thread#0:B:Entao Mensagem de sucesso
+2021-03-05T09:14:06.1406878-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1406878-03:00:Thread#0:B:E Lista de alunos ficaria
+2021-03-05T09:14:06.1406878-03:00:Thread#0:B:  --- table step argument ---
+2021-03-05T09:14:06.1406878-03:00:Thread#0:B:  | Matricula | Nome         | Nascimento | Sexo      | Cpf |
+2021-03-05T09:14:06.1406878-03:00:Thread#0:B:  | 123       | Jubisclaudio | 29/05/2000 | Masculino |     |
+2021-03-05T09:14:06.1416871-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1526804-03:00:Thread#0:TestItem#4:Scheduler: reschedule tests for testitem #4
+2021-03-05T09:14:06.1526804-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T09:14:06.1526804-03:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+2021-03-05T09:14:06.1526804-03:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-03-05T09:14:06.1526804-03:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-05T09:14:06.1526804-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-03-05T09:14:06.1526804-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-03-05T09:14:06.1526804-03:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-03-05T09:14:06.1526804-03:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-03-05T09:14:06.1526804-03:00:Thread#0:Scheduler: with testItemExecutionIndex 1
+2021-03-05T09:14:06.1586767-03:00:Thread#0: Test #4/0 is finished on thread #0 as Failed within 0,1059357 seconds
+2021-03-05T09:14:06.1596847-03:00:Thread#0: Test #4/1 is started on thread #0
+2021-03-05T09:14:06.1596847-03:00:Thread#0:B:Dado Os dados a seguir
+2021-03-05T09:14:06.1596847-03:00:Thread#0:B:  --- table step argument ---
+2021-03-05T09:14:06.1596847-03:00:Thread#0:B:  | Matricula | Nome         | Nascimento | Sexo      | Cpf |
+2021-03-05T09:14:06.1596847-03:00:Thread#0:B:  | 123       | Jubisclaudio | 29/05/2000 | Masculino |     |
+2021-03-05T09:14:06.1616736-03:00:Thread#0:T:error: Referência de objeto não definida para uma instância de um objeto. (0,0s)
+2021-03-05T09:14:06.1616736-03:00:Thread#0:B:Quando Adicionar dados na lista
+2021-03-05T09:14:06.1616736-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1616736-03:00:Thread#0:B:Entao Mensagem de sucesso
+2021-03-05T09:14:06.1626726-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1626726-03:00:Thread#0:B:E Lista de alunos ficaria
+2021-03-05T09:14:06.1626726-03:00:Thread#0:B:  --- table step argument ---
+2021-03-05T09:14:06.1626726-03:00:Thread#0:B:  | Matricula | Nome         | Nascimento | Sexo      | Cpf |
+2021-03-05T09:14:06.1626726-03:00:Thread#0:B:  | 123       | Jubisclaudio | 29/05/2000 | Masculino |     |
+2021-03-05T09:14:06.1626726-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1636737-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T09:14:06.1636737-03:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+2021-03-05T09:14:06.1636737-03:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-03-05T09:14:06.1636737-03:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-05T09:14:06.1636737-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-03-05T09:14:06.1636737-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-03-05T09:14:06.1636737-03:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-03-05T09:14:06.1636737-03:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-03-05T09:14:06.1636737-03:00:Thread#0:Scheduler: with testItemExecutionIndex 2
+2021-03-05T09:14:06.1636737-03:00:Thread#0: Test #4/1 is finished on thread #0 as Failed within 0,003989 seconds
+2021-03-05T09:14:06.1636737-03:00:Thread#0: Test #4/2 is started on thread #0
+2021-03-05T09:14:06.1646729-03:00:Thread#0:B:Dado Os dados a seguir
+2021-03-05T09:14:06.1646729-03:00:Thread#0:B:  --- table step argument ---
+2021-03-05T09:14:06.1646729-03:00:Thread#0:B:  | Matricula | Nome         | Nascimento | Sexo      | Cpf |
+2021-03-05T09:14:06.1646729-03:00:Thread#0:B:  | 123       | Jubisclaudio | 29/05/2000 | Masculino |     |
+2021-03-05T09:14:06.1666725-03:00:Thread#0:T:error: Referência de objeto não definida para uma instância de um objeto. (0,0s)
+2021-03-05T09:14:06.1666725-03:00:Thread#0:B:Quando Adicionar dados na lista
+2021-03-05T09:14:06.1666725-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1666725-03:00:Thread#0:B:Entao Mensagem de sucesso
+2021-03-05T09:14:06.1666725-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1666725-03:00:Thread#0:B:E Lista de alunos ficaria
+2021-03-05T09:14:06.1666725-03:00:Thread#0:B:  --- table step argument ---
+2021-03-05T09:14:06.1666725-03:00:Thread#0:B:  | Matricula | Nome         | Nascimento | Sexo      | Cpf |
+2021-03-05T09:14:06.1676708-03:00:Thread#0:B:  | 123       | Jubisclaudio | 29/05/2000 | Masculino |     |
+2021-03-05T09:14:06.1676708-03:00:Thread#0:T:skipped because of previous errors
+2021-03-05T09:14:06.1676708-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T09:14:06.1676708-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-05T09:14:06.1676708-03:00:Thread#0:Scheduler: enumerator for thread is at end
+2021-03-05T09:14:06.1676708-03:00:Thread#0:Scheduler: No more tests for thread
+2021-03-05T09:14:06.1686704-03:00:Thread#0: Test #4/2 is finished on thread #0 as Failed within 0,0039975 seconds
+2021-03-05T09:14:06.2126420-03:00:Thread#0:T:LivingDocPlugin: Output generated in: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TestExecution.json
+2021-03-05T09:14:06.9099415-03:00:Trying to cancel thread
+2021-03-05T09:14:06.9099415-03:00:Thread cancelled
+2021-03-05T09:14:06.9099415-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-05T09:14:06.9099415-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-05T09:14:06.9099415-03:00:Thread#-1:Scheduler: enumerator for thread is at end
+2021-03-05T09:14:06.9129419-03:00;Thread#22;Info;test run finished
+2021-03-05T09:14:06.9129419-03:00;Thread#22;Info;publishing test results
+2021-03-05T09:14:06.9129419-03:00;Thread#22;Info;test results published
+2021-03-05T09:14:06.9129419-03:00;Thread#22;Info;generating reports
+2021-03-05T09:14:06.9159381-03:00;Thread#22;Info;Starting external report generation process
+2021-03-05T09:14:08.3475067-03:00;Thread#22;Info;Successfully generated reports.
+2021-03-05T09:14:08.3485083-03:00;Thread#22;Info;Successfully generated reports
+2021-03-05T09:14:08.3495060-03:00:Total: 1 (test executions: 3)
+2021-03-05T09:14:08.3495060-03:00:Succeeded: 0
+2021-03-05T09:14:08.3495060-03:00:Ignored: 0
+2021-03-05T09:14:08.3495060-03:00:Pending: 0
+2021-03-05T09:14:08.3495060-03:00:Skipped: 0
+2021-03-05T09:14:08.3495060-03:00:Failed: 1
+2021-03-05T09:14:08.3495060-03:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-03-05T09:14:08.3495060-03:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T091405.html'
+========== End of log file ==========

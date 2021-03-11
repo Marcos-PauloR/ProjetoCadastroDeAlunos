@@ -1,0 +1,102 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository.Tests\\EM.Repository.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Domain\\EM.Domain.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Domain\\EM.Domain.csproj",
+        "projectName": "EM.Domain",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Domain\\EM.Domain.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository.Tests\\EM.Repository.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository.Tests\\EM.Repository.Tests.csproj",
+        "projectName": "EM.Repository.Tests",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository.Tests\\EM.Repository.Tests.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {
+              "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository\\EM.Repository.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository\\EM.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.3, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.1, )"
+            },
+            "SpecFlow.Plus.LivingDocPlugin": {
+              "target": "Package",
+              "version": "[3.7.10, )"
+            },
+            "SpecRun.SpecFlow": {
+              "target": "Package",
+              "version": "[3.7.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository\\EM.Repository.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository\\EM.Repository.csproj",
+        "projectName": "EM.Repository",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Repository\\EM.Repository.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Domain\\EM.Domain.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ProjetoFinal\\EM.Domain\\EM.Domain.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

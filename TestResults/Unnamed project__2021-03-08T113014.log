@@ -1,0 +1,109 @@
+﻿2021-03-08T11:30:14.5608841-03:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-03-08T11:30:14.5608841-03:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.7.3 in Framework clr40 in x86 mode execution started
+2021-03-08T11:30:14.5608841-03:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-03-08T11:30:14.5608841-03:00;VSTestExecutionThread;Info;Current UserName: 'Usuario', MachineName: 'DESKTOP-OJBJSH6'
+2021-03-08T11:30:14.5908659-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T11:30:14.5908659-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-08T11:30:14.5908659-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-08T11:30:14.6356855-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-08T113014.log
+2021-03-08T11:30:14.6496783-03:00;Thread#13;Info;Checking activation
+2021-03-08T11:30:14.7406212-03:00;Thread#13;Info;Activated.
+2021-03-08T11:30:14.7406212-03:00;Thread#13;Info;Activation check completed
+2021-03-08T11:30:14.7406212-03:00;Thread#13;Info;Starting test run
+2021-03-08T11:30:14.7795962-03:00;Thread#13;Info;Discovering target: Default
+2021-03-08T11:30:14.7805967-03:00;Thread#13;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T11:30:15.0552943-03:00;Thread#13;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T11:30:15.0572933-03:00:Test Suite Dump
+2021-03-08T11:30:15.0582943-03:00:#0: Unnamed project/ - 
+2021-03-08T11:30:15.0582943-03:00:#1: Default - 
+2021-03-08T11:30:15.0582943-03:00:#2: EM.Repository.Tests - 
+2021-03-08T11:30:15.0582943-03:00:#3: Repositorio aluno - 
+2021-03-08T11:30:15.0912738-03:00:#8: Remover Aluno, 141156062 - TestAssembly:EM.Repository.Tests/Feature:Repositorio+aluno/Scenario:Remover+Aluno%2c+141156062
+2021-03-08T11:30:15.0912738-03:00:End: Test Suite Dump
+2021-03-08T11:30:15.1112620-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T11:30:15.1132586-03:00:Thread#:Scheduler: testitem #8 from normal test queue 
+2021-03-08T11:30:15.1132586-03:00:Thread#0:Scheduler: considering testitem #8 for thread 0
+2021-03-08T11:30:15.1162590-03:00:Thread#0:TestItem#8:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T11:30:15.1162590-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadSpecific:False
+2021-03-08T11:30:15.1162590-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadUnspecific:False
+2021-03-08T11:30:15.1162590-03:00:Thread#0:Scheduler: using testitem #8 for thread 0
+2021-03-08T11:30:15.1172582-03:00:Thread#0:Scheduler: Test #8 is scheduled for thread
+2021-03-08T11:30:15.1182575-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T11:30:15.1212558-03:00:Thread #0: creating new test thread executor for EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-03-08T11:30:15.1222553-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-08T11:30:15.1242538-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-08T11:30:15.1252534-03:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2021-03-08T11:30:15.3464561-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
+2021-03-08T11:30:15.3544510-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-03-08T11:30:15.3584484-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T11:30:15.3584484-03:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-03-08T11:30:15.3604472-03:00:Thread#0:T:-> Using default config
+2021-03-08T11:30:15.7904498-03:00:Thread#0: Test #8/0 is started on thread #0
+2021-03-08T11:30:15.8174349-03:00:Thread#0:B:Dado Que a Matricula é 141156062
+2021-03-08T11:30:15.9053793-03:00:Thread#0:T:done: RemoverAluno.DadoQueAMatriculaE(141156062) (0,0s)
+2021-03-08T11:30:15.9063786-03:00:Thread#0:B:Quando Remover aluno da lista
+2021-03-08T11:30:16.1132542-03:00:Thread#0:T:done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,2s)
+2021-03-08T11:30:16.1132542-03:00:Thread#0:B:Entao vejo que aluno foi removido com sucesso
+2021-03-08T11:30:16.1982024-03:00:Thread#0:T:error: A sequência não contém elementos (0,1s)
+2021-03-08T11:30:16.2151915-03:00:Thread#0:TestItem#8:Scheduler: reschedule tests for testitem #8
+2021-03-08T11:30:16.2161909-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T11:30:16.2161909-03:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #8
+2021-03-08T11:30:16.2161909-03:00:Thread#0:Scheduler: considering testitem #8 for thread 0
+2021-03-08T11:30:16.2161909-03:00:Thread#0:TestItem#8:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T11:30:16.2161909-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadSpecific:False
+2021-03-08T11:30:16.2161909-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadUnspecific:False
+2021-03-08T11:30:16.2161909-03:00:Thread#0:Scheduler: using testitem #8 for thread 0
+2021-03-08T11:30:16.2161909-03:00:Thread#0:Scheduler: Test #8 is scheduled for thread
+2021-03-08T11:30:16.2161909-03:00:Thread#0:Scheduler: with testItemExecutionIndex 1
+2021-03-08T11:30:16.2331803-03:00:Thread#0: Test #8/0 is finished on thread #0 as Failed within 0,4417312 seconds
+2021-03-08T11:30:16.2341778-03:00:Thread#0: Test #8/1 is started on thread #0
+2021-03-08T11:30:16.2351774-03:00:Thread#0:B:Dado Que a Matricula é 141156062
+2021-03-08T11:30:16.2351774-03:00:Thread#0:T:done: RemoverAluno.DadoQueAMatriculaE(141156062) (0,0s)
+2021-03-08T11:30:16.2351774-03:00:Thread#0:B:Quando Remover aluno da lista
+2021-03-08T11:30:16.2451711-03:00:Thread#0:T:done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)
+2021-03-08T11:30:16.2461707-03:00:Thread#0:B:Entao vejo que aluno foi removido com sucesso
+2021-03-08T11:30:16.2561641-03:00:Thread#0:T:error: A sequência não contém elementos (0,0s)
+2021-03-08T11:30:16.2571636-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T11:30:16.2571636-03:00:Thread#:Scheduler: dequeuing a rescheduled testitem: #8
+2021-03-08T11:30:16.2571636-03:00:Thread#0:Scheduler: considering testitem #8 for thread 0
+2021-03-08T11:30:16.2571636-03:00:Thread#0:TestItem#8:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T11:30:16.2571636-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadSpecific:False
+2021-03-08T11:30:16.2571636-03:00:Thread#0:TestItem#8:runsOnOneOtherThreadUnspecific:False
+2021-03-08T11:30:16.2571636-03:00:Thread#0:Scheduler: using testitem #8 for thread 0
+2021-03-08T11:30:16.2571636-03:00:Thread#0:Scheduler: Test #8 is scheduled for thread
+2021-03-08T11:30:16.2571636-03:00:Thread#0:Scheduler: with testItemExecutionIndex 2
+2021-03-08T11:30:16.2571636-03:00:Thread#0: Test #8/1 is finished on thread #0 as Failed within 0,0229858 seconds
+2021-03-08T11:30:16.2581640-03:00:Thread#0: Test #8/2 is started on thread #0
+2021-03-08T11:30:16.2581640-03:00:Thread#0:B:Dado Que a Matricula é 141156062
+2021-03-08T11:30:16.2581640-03:00:Thread#0:T:done: RemoverAluno.DadoQueAMatriculaE(141156062) (0,0s)
+2021-03-08T11:30:16.2581640-03:00:Thread#0:B:Quando Remover aluno da lista
+2021-03-08T11:30:16.2731542-03:00:Thread#0:T:done: RemoverAluno.QuandoRemoverAlunoDaLista() (0,0s)
+2021-03-08T11:30:16.2731542-03:00:Thread#0:B:Entao vejo que aluno foi removido com sucesso
+2021-03-08T11:30:16.2841494-03:00:Thread#0:T:error: A sequência não contém elementos (0,0s)
+2021-03-08T11:30:16.2841494-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T11:30:16.2841494-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-08T11:30:16.2841494-03:00:Thread#0:Scheduler: enumerator for thread is at end
+2021-03-08T11:30:16.2841494-03:00:Thread#0:Scheduler: No more tests for thread
+2021-03-08T11:30:16.2871455-03:00:Thread#0: Test #8/2 is finished on thread #0 as Failed within 0,0289815 seconds
+2021-03-08T11:30:16.3401128-03:00:Thread#0:T:LivingDocPlugin: Output generated in: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TestExecution.json
+2021-03-08T11:30:16.8051262-03:00:Trying to cancel thread
+2021-03-08T11:30:16.8051262-03:00:Thread cancelled
+2021-03-08T11:30:16.8111205-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T11:30:16.8111205-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-08T11:30:16.8111205-03:00:Thread#-1:Scheduler: enumerator for thread is at end
+2021-03-08T11:30:16.8151180-03:00;Thread#13;Info;test run finished
+2021-03-08T11:30:16.8161175-03:00;Thread#13;Info;publishing test results
+2021-03-08T11:30:16.8570931-03:00;Thread#13;Info;test results published
+2021-03-08T11:30:16.8570931-03:00;Thread#13;Info;generating reports
+2021-03-08T11:30:16.9550343-03:00;Thread#13;Info;Starting external report generation process
+2021-03-08T11:30:18.4698412-03:00;Thread#13;Info;Successfully generated reports.
+2021-03-08T11:30:18.4708401-03:00;Thread#13;Info;Successfully generated reports
+2021-03-08T11:30:18.4788357-03:00:Total: 1 (test executions: 3)
+2021-03-08T11:30:18.4798351-03:00:Succeeded: 0
+2021-03-08T11:30:18.4808344-03:00:Ignored: 0
+2021-03-08T11:30:18.4808344-03:00:Pending: 0
+2021-03-08T11:30:18.4808344-03:00:Skipped: 0
+2021-03-08T11:30:18.4808344-03:00:Failed: 1
+2021-03-08T11:30:18.4898290-03:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-03-08T11:30:18.4908277-03:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-08T113014.html'
+========== End of log file ==========

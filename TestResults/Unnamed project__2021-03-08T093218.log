@@ -1,0 +1,136 @@
+﻿2021-03-08T09:32:18.1749746-03:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-03-08T09:32:18.1749746-03:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.7.3 in Framework clr40 in x86 mode execution started
+2021-03-08T09:32:18.1749746-03:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-03-08T09:32:18.1759742-03:00;VSTestExecutionThread;Info;Current UserName: 'Usuario', MachineName: 'DESKTOP-OJBJSH6'
+2021-03-08T09:32:18.2049564-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T09:32:18.2049564-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-08T09:32:18.2049564-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-08T09:32:18.2497871-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-08T093218.log
+2021-03-08T09:32:18.2557834-03:00;Thread#13;Info;Checking activation
+2021-03-08T09:32:18.3207447-03:00;Thread#13;Info;Activated.
+2021-03-08T09:32:18.3207447-03:00;Thread#13;Info;Activation check completed
+2021-03-08T09:32:18.3207447-03:00;Thread#13;Info;Starting test run
+2021-03-08T09:32:18.3582533-03:00;Thread#13;Info;Discovering target: Default
+2021-03-08T09:32:18.3582533-03:00;Thread#13;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T09:32:18.6397161-03:00;Thread#13;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T09:32:18.6407177-03:00:Test Suite Dump
+2021-03-08T09:32:18.6427173-03:00:#0: Unnamed project/ - 
+2021-03-08T09:32:18.6427173-03:00:#1: Default - 
+2021-03-08T09:32:18.6427173-03:00:#2: EM.Repository.Tests - 
+2021-03-08T09:32:18.6427173-03:00:#3: Inserir dados na tabela - 
+2021-03-08T09:32:18.6746966-03:00:#11: Alterar aluno, 43201857 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+43201857
+2021-03-08T09:32:18.6746966-03:00:#12: Alterar aluno, 475089110 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+475089110
+2021-03-08T09:32:18.6746966-03:00:#13: Alterar aluno, 745118505 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+745118505
+2021-03-08T09:32:18.6746966-03:00:#15: Alterar aluno, 548808454 - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Alterar+aluno%2c+548808454
+2021-03-08T09:32:18.6746966-03:00:End: Test Suite Dump
+2021-03-08T09:32:18.6936829-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T09:32:18.6956814-03:00:Thread#:Scheduler: testitem #11 from normal test queue 
+2021-03-08T09:32:18.6956814-03:00:Thread#0:Scheduler: considering testitem #11 for thread 0
+2021-03-08T09:32:18.6986799-03:00:Thread#0:TestItem#11:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T09:32:18.6986799-03:00:Thread#0:TestItem#11:runsOnOneOtherThreadSpecific:False
+2021-03-08T09:32:18.6986799-03:00:Thread#0:TestItem#11:runsOnOneOtherThreadUnspecific:False
+2021-03-08T09:32:18.6986799-03:00:Thread#0:Scheduler: using testitem #11 for thread 0
+2021-03-08T09:32:18.6996793-03:00:Thread#0:Scheduler: Test #11 is scheduled for thread
+2021-03-08T09:32:18.7006786-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T09:32:18.7026774-03:00:Thread #0: creating new test thread executor for EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-03-08T09:32:18.7046761-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-08T09:32:18.7066748-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-08T09:32:18.7086736-03:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2021-03-08T09:32:18.9269091-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
+2021-03-08T09:32:18.9359036-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-03-08T09:32:18.9389017-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-08T09:32:18.9389017-03:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-03-08T09:32:18.9419000-03:00:Thread#0:T:-> Using default config
+2021-03-08T09:32:19.3696392-03:00:Thread#0: Test #11/0 is started on thread #0
+2021-03-08T09:32:19.3956234-03:00:Thread#0:B:Dado que a Matricula é 43201857
+2021-03-08T09:32:19.4805696-03:00:Thread#0:T:done: AlterarDadosDaTabela.DadoQueAMatriculaE(43201857) (0,0s)
+2021-03-08T09:32:19.4815689-03:00:Thread#0:B:E novos dados são Nome guilherme augusto gustavo da mata Nascimento 29/05/2000 Sexo 0 Cpf 56309533037
+2021-03-08T09:32:19.4875652-03:00:Thread#0:T:done: AlterarDadosDaTabela.DadoNovosDadosSaoNomeNascimentoSexoCpf(" guilherme august...", 29/05/2000 00:00:00, Masculino, "56309533037") (0,0s)
+2021-03-08T09:32:19.4875652-03:00:Thread#0:B:Quando alterar aluno
+2021-03-08T09:32:19.6853554-03:00:Thread#0:T:done: AlterarDadosDaTabela.QuandoAlterarAluno() (0,2s)
+2021-03-08T09:32:19.6863547-03:00:Thread#0:B:Entao vejo alteraçoes
+2021-03-08T09:32:19.7423204-03:00:Thread#0:T:done: AlterarDadosDaTabela.EntaoVejoAlteracoes() (0,1s)
+2021-03-08T09:32:19.7593100-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T09:32:19.7593100-03:00:Thread#:Scheduler: testitem #12 from normal test queue 
+2021-03-08T09:32:19.7593100-03:00:Thread#0:Scheduler: considering testitem #12 for thread 0
+2021-03-08T09:32:19.7593100-03:00:Thread#0:TestItem#12:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T09:32:19.7593100-03:00:Thread#0:TestItem#12:runsOnOneOtherThreadSpecific:False
+2021-03-08T09:32:19.7593100-03:00:Thread#0:TestItem#12:runsOnOneOtherThreadUnspecific:False
+2021-03-08T09:32:19.7593100-03:00:Thread#0:Scheduler: using testitem #12 for thread 0
+2021-03-08T09:32:19.7593100-03:00:Thread#0:Scheduler: Test #12 is scheduled for thread
+2021-03-08T09:32:19.7593100-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T09:32:19.7713023-03:00:Thread#0: Test #11/0 is finished on thread #0 as Succeeded within 0,4016631 seconds
+2021-03-08T09:32:19.7733014-03:00:Thread#0: Test #12/0 is started on thread #0
+2021-03-08T09:32:19.7743009-03:00:Thread#0:B:Dado que a Matricula é 475089110
+2021-03-08T09:32:19.7812980-03:00:Thread#0:T:done: AlterarDadosDaTabela.DadoQueAMatriculaE(475089110) (0,0s)
+2021-03-08T09:32:19.7822978-03:00:Thread#0:B:E novos dados são Nome livia olivia Nascimento 06/06/1950 Sexo 1 Cpf 62584950871
+2021-03-08T09:32:19.7832971-03:00:Thread#0:T:done: AlterarDadosDaTabela.DadoNovosDadosSaoNomeNascimentoSexoCpf(" livia olivia", 06/06/1950 00:00:00, Feminino, "62584950871") (0,0s)
+2021-03-08T09:32:19.7832971-03:00:Thread#0:B:Quando alterar aluno
+2021-03-08T09:32:19.7943898-03:00:Thread#0:T:done: AlterarDadosDaTabela.QuandoAlterarAluno() (0,0s)
+2021-03-08T09:32:19.7953934-03:00:Thread#0:B:Entao vejo alteraçoes
+2021-03-08T09:32:19.8043871-03:00:Thread#0:T:done: AlterarDadosDaTabela.EntaoVejoAlteracoes() (0,0s)
+2021-03-08T09:32:19.8053865-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T09:32:19.8053865-03:00:Thread#:Scheduler: testitem #13 from normal test queue 
+2021-03-08T09:32:19.8053865-03:00:Thread#0:Scheduler: considering testitem #13 for thread 0
+2021-03-08T09:32:19.8053865-03:00:Thread#0:TestItem#13:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T09:32:19.8053865-03:00:Thread#0:TestItem#13:runsOnOneOtherThreadSpecific:False
+2021-03-08T09:32:19.8053865-03:00:Thread#0:TestItem#13:runsOnOneOtherThreadUnspecific:False
+2021-03-08T09:32:19.8053865-03:00:Thread#0:Scheduler: using testitem #13 for thread 0
+2021-03-08T09:32:19.8053865-03:00:Thread#0:Scheduler: Test #13 is scheduled for thread
+2021-03-08T09:32:19.8053865-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T09:32:19.8063857-03:00:Thread#0: Test #12/0 is finished on thread #0 as Succeeded within 0,0330843 seconds
+2021-03-08T09:32:19.8073844-03:00:Thread#0: Test #13/0 is started on thread #0
+2021-03-08T09:32:19.8083838-03:00:Thread#0:B:Dado que a Matricula é 745118505
+2021-03-08T09:32:19.8093837-03:00:Thread#0:T:done: AlterarDadosDaTabela.DadoQueAMatriculaE(745118505) (0,0s)
+2021-03-08T09:32:19.8103824-03:00:Thread#0:B:E novos dados são Nome sophie gabrielly evelyn fernande Nascimento 13/01/1960 Sexo 0 Cpf 87414307948
+2021-03-08T09:32:19.8113832-03:00:Thread#0:T:done: AlterarDadosDaTabela.DadoNovosDadosSaoNomeNascimentoSexoCpf(" sophie gabrielly...", 13/01/1960 00:00:00, Masculino, "87414307948") (0,0s)
+2021-03-08T09:32:19.8113832-03:00:Thread#0:B:Quando alterar aluno
+2021-03-08T09:32:19.8224236-03:00:Thread#0:T:done: AlterarDadosDaTabela.QuandoAlterarAluno() (0,0s)
+2021-03-08T09:32:19.8224236-03:00:Thread#0:B:Entao vejo alteraçoes
+2021-03-08T09:32:19.8324206-03:00:Thread#0:T:done: AlterarDadosDaTabela.EntaoVejoAlteracoes() (0,0s)
+2021-03-08T09:32:19.8334201-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T09:32:19.8334201-03:00:Thread#:Scheduler: testitem #15 from normal test queue 
+2021-03-08T09:32:19.8334201-03:00:Thread#0:Scheduler: considering testitem #15 for thread 0
+2021-03-08T09:32:19.8334201-03:00:Thread#0:TestItem#15:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-08T09:32:19.8334201-03:00:Thread#0:TestItem#15:runsOnOneOtherThreadSpecific:False
+2021-03-08T09:32:19.8334201-03:00:Thread#0:TestItem#15:runsOnOneOtherThreadUnspecific:False
+2021-03-08T09:32:19.8334201-03:00:Thread#0:Scheduler: using testitem #15 for thread 0
+2021-03-08T09:32:19.8334201-03:00:Thread#0:Scheduler: Test #15 is scheduled for thread
+2021-03-08T09:32:19.8334201-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-08T09:32:19.8344193-03:00:Thread#0: Test #13/0 is finished on thread #0 as Succeeded within 0,0270349 seconds
+2021-03-08T09:32:19.8344193-03:00:Thread#0: Test #15/0 is started on thread #0
+2021-03-08T09:32:19.8364195-03:00:Thread#0:B:Dado que a Matricula é 548808454
+2021-03-08T09:32:19.8364195-03:00:Thread#0:T:done: AlterarDadosDaTabela.DadoQueAMatriculaE(548808454) (0,0s)
+2021-03-08T09:32:19.8374176-03:00:Thread#0:B:E novos dados são Nome marcos paulo rios Nascimento 29/05/2000 Sexo 1 Cpf 70536598100
+2021-03-08T09:32:19.8384169-03:00:Thread#0:T:done: AlterarDadosDaTabela.DadoNovosDadosSaoNomeNascimentoSexoCpf(" marcos paulo rios", 29/05/2000 00:00:00, Feminino, "70536598100") (0,0s)
+2021-03-08T09:32:19.8384169-03:00:Thread#0:B:Quando alterar aluno
+2021-03-08T09:32:19.8488800-03:00:Thread#0:T:done: AlterarDadosDaTabela.QuandoAlterarAluno() (0,0s)
+2021-03-08T09:32:19.8498829-03:00:Thread#0:B:Entao vejo alteraçoes
+2021-03-08T09:32:19.8668712-03:00:Thread#0:T:done: AlterarDadosDaTabela.EntaoVejoAlteracoes() (0,0s)
+2021-03-08T09:32:19.8678712-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-08T09:32:19.8678712-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-08T09:32:19.8678712-03:00:Thread#0:Scheduler: enumerator for thread is at end
+2021-03-08T09:32:19.8678712-03:00:Thread#0:Scheduler: No more tests for thread
+2021-03-08T09:32:19.8698695-03:00:Thread#0: Test #15/0 is finished on thread #0 as Succeeded within 0,0354502 seconds
+2021-03-08T09:32:19.9198390-03:00:Thread#0:T:LivingDocPlugin: Output generated in: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TestExecution.json
+2021-03-08T09:32:20.5875514-03:00:Trying to cancel thread
+2021-03-08T09:32:20.5875514-03:00:Thread cancelled
+2021-03-08T09:32:20.5955473-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-08T09:32:20.5955473-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-08T09:32:20.5955473-03:00:Thread#-1:Scheduler: enumerator for thread is at end
+2021-03-08T09:32:20.5975450-03:00;Thread#13;Info;test run finished
+2021-03-08T09:32:20.5975450-03:00;Thread#13;Info;publishing test results
+2021-03-08T09:32:20.6395192-03:00;Thread#13;Info;test results published
+2021-03-08T09:32:20.6395192-03:00;Thread#13;Info;generating reports
+2021-03-08T09:32:20.7334619-03:00;Thread#13;Info;Starting external report generation process
+2021-03-08T09:32:22.1128621-03:00;Thread#13;Info;Successfully generated reports.
+2021-03-08T09:32:22.1138600-03:00;Thread#13;Info;Successfully generated reports
+2021-03-08T09:32:22.1218569-03:00:Total: 4
+2021-03-08T09:32:22.1238556-03:00:Succeeded: 4
+2021-03-08T09:32:22.1238556-03:00:Ignored: 0
+2021-03-08T09:32:22.1248550-03:00:Pending: 0
+2021-03-08T09:32:22.1248550-03:00:Skipped: 0
+2021-03-08T09:32:22.1248550-03:00:Failed: 0
+2021-03-08T09:32:22.1338494-03:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-03-08T09:32:22.1338494-03:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-08T093218.html'
+========== End of log file ==========

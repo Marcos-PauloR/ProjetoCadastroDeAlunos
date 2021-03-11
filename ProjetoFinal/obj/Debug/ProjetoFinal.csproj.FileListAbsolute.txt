@@ -1,0 +1,10 @@
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.exe.config
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.exe
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\bin\Debug\ProjetoFinal.pdb
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.Form1.resources
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.Properties.Resources.resources
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.exe
+C:\Users\Usuario\source\repos\ProjetoFinal\ProjetoFinal\obj\Debug\ProjetoFinal.pdb

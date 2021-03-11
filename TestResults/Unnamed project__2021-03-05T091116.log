@@ -1,0 +1,134 @@
+﻿2021-03-05T09:11:16.5319402-03:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-03-05T09:11:16.5319402-03:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.7.3 in Framework clr40 in x86 mode execution started
+2021-03-05T09:11:16.5319402-03:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-03-05T09:11:16.5329402-03:00;VSTestExecutionThread;Info;Current UserName: 'Usuario', MachineName: 'DESKTOP-OJBJSH6'
+2021-03-05T09:11:16.5619225-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-05T09:11:16.5619225-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-05T09:11:16.5619225-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-05T09:11:16.6168662-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T091116.log
+2021-03-05T09:11:16.6268598-03:00;Thread#13;Info;Checking activation
+2021-03-05T09:11:16.6928202-03:00;Thread#13;Info;Activated.
+2021-03-05T09:11:16.6928202-03:00;Thread#13;Info;Activation check completed
+2021-03-05T09:11:16.6928202-03:00;Thread#13;Info;Starting test run
+2021-03-05T09:11:16.7297965-03:00;Thread#13;Info;Discovering target: Default
+2021-03-05T09:11:16.7307959-03:00;Thread#13;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-05T09:11:17.0036282-03:00;Thread#13;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-05T09:11:17.0046267-03:00:Test Suite Dump
+2021-03-05T09:11:17.0066251-03:00:#0: Unnamed project/ - 
+2021-03-05T09:11:17.0066251-03:00:#1: Default - 
+2021-03-05T09:11:17.0066251-03:00:#2: EM.Domain.Testes - 
+2021-03-05T09:11:17.0066251-03:00:#3: Aluno correto - 
+2021-03-05T09:11:17.0376070-03:00:#4: verificar aluno - TestAssembly:EM.Domain.Testes/Feature:Aluno+correto/Scenario:verificar+aluno
+2021-03-05T09:11:17.0376070-03:00:End: Test Suite Dump
+2021-03-05T09:11:17.0565953-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T09:11:17.0585940-03:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2021-03-05T09:11:17.0585940-03:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-03-05T09:11:17.0615921-03:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-05T09:11:17.0615921-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-03-05T09:11:17.0615921-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-03-05T09:11:17.0615921-03:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-03-05T09:11:17.0625911-03:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-03-05T09:11:17.0635900-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-05T09:11:17.0665871-03:00:Thread #0: creating new test thread executor for EM.Domain.Testes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-03-05T09:11:17.0685870-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-05T09:11:17.0880652-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-05T09:11:17.0900657-03:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2021-03-05T09:11:17.7829952-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
+2021-03-05T09:11:17.8205596-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-03-05T09:11:17.8458694-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\EM.Domain.Testes.dll
+2021-03-05T09:11:17.8458694-03:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in EM.Domain.Testes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-03-05T09:11:17.8518667-03:00:Thread#0:T:-> Using default config
+2021-03-05T09:11:18.4060325-03:00:Thread#0: Test #4/0 is started on thread #0
+2021-03-05T09:11:18.4360126-03:00:Thread#0:B:Dado que o aluno nao e null
+2021-03-05T09:11:18.5316842-03:00:Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+2021-03-05T09:11:18.5316842-03:00:Thread#0:T:        [Given(@"que o aluno nao e null")]
+2021-03-05T09:11:18.5316842-03:00:Thread#0:T:        public void DadoQueOAlunoNaoENull()
+2021-03-05T09:11:18.5316842-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.5366810-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-05T09:11:18.5366810-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.5386798-03:00:Thread#0:B:E os valores preenchidos corretos
+2021-03-05T09:11:18.5406785-03:00:Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+2021-03-05T09:11:18.5406785-03:00:Thread#0:T:        [Given(@"os valores preenchidos corretos")]
+2021-03-05T09:11:18.5406785-03:00:Thread#0:T:        public void DadoOsValoresPreenchidosCorretos()
+2021-03-05T09:11:18.5406785-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.5406785-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-05T09:11:18.5406785-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.5406785-03:00:Thread#0:B:Quando apertar getHascode
+2021-03-05T09:11:18.5426775-03:00:Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+2021-03-05T09:11:18.5426775-03:00:Thread#0:T:        [When(@"apertar getHascode")]
+2021-03-05T09:11:18.5426775-03:00:Thread#0:T:        public void QuandoApertarGetHascode()
+2021-03-05T09:11:18.5436758-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.5436758-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-05T09:11:18.5436758-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.5436758-03:00:Thread#0:B:Entao getHascode deve ser igual matricula
+2021-03-05T09:11:18.5456756-03:00:Thread#0:T:No matching step definition found for the step. Use the following code to create one:
+2021-03-05T09:11:18.5456756-03:00:Thread#0:T:        [Then(@"getHascode deve ser igual matricula")]
+2021-03-05T09:11:18.5456756-03:00:Thread#0:T:        public void EntaoGetHascodeDeveSerIgualMatricula()
+2021-03-05T09:11:18.5456756-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.5456756-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-05T09:11:18.5456756-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.6242806-03:00:Thread#0:T:Pending: No matching step definition found for one or more steps.
+2021-03-05T09:11:18.6242806-03:00:Thread#0:T:using System;
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:using TechTalk.SpecFlow;
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:namespace MyNamespace
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:{
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:    [Binding]
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:    public class StepDefinitions
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:    {
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:        private readonly ScenarioContext _scenarioContext;
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:        public StepDefinitions(ScenarioContext scenarioContext)
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:            _scenarioContext = scenarioContext;
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:        [Given(@"que o aluno nao e null")]
+2021-03-05T09:11:18.6252788-03:00:Thread#0:T:        public void DadoQueOAlunoNaoENull()
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        [Given(@"os valores preenchidos corretos")]
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        public void DadoOsValoresPreenchidosCorretos()
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        [When(@"apertar getHascode")]
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        public void QuandoApertarGetHascode()
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.6262775-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:        
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:        [Then(@"getHascode deve ser igual matricula")]
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:        public void EntaoGetHascodeDeveSerIgualMatricula()
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:        {
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:            _scenarioContext.Pending();
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:        }
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:    }
+2021-03-05T09:11:18.6272767-03:00:Thread#0:T:}
+2021-03-05T09:11:18.6342734-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T09:11:18.6342734-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-05T09:11:18.6342734-03:00:Thread#0:Scheduler: enumerator for thread is at end
+2021-03-05T09:11:18.6342734-03:00:Thread#0:Scheduler: No more tests for thread
+2021-03-05T09:11:18.6482645-03:00:Thread#0: Test #4/0 is finished on thread #0 as Pending within 0,242232 seconds
+2021-03-05T09:11:18.6972349-03:00:Thread#0:T:LivingDocPlugin: Output generated in: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Domain.Testes\bin\Debug\net472\TestExecution.json
+2021-03-05T09:11:19.6539292-03:00:Trying to cancel thread
+2021-03-05T09:11:19.6539292-03:00:Thread cancelled
+2021-03-05T09:11:19.6599252-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-05T09:11:19.6599252-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-05T09:11:19.6599252-03:00:Thread#-1:Scheduler: enumerator for thread is at end
+2021-03-05T09:11:19.6609302-03:00;Thread#13;Info;test run finished
+2021-03-05T09:11:19.6609302-03:00;Thread#13;Info;publishing test results
+2021-03-05T09:11:19.7708740-03:00;Thread#13;Info;test results published
+2021-03-05T09:11:19.7708740-03:00;Thread#13;Info;generating reports
+2021-03-05T09:11:19.8738069-03:00;Thread#13;Info;Starting external report generation process
+2021-03-05T09:11:22.8029016-03:00;Thread#13;Info;Successfully generated reports.
+2021-03-05T09:11:22.8039015-03:00;Thread#13;Info;Successfully generated reports
+2021-03-05T09:11:22.8118961-03:00:Total: 1
+2021-03-05T09:11:22.8138950-03:00:Succeeded: 0
+2021-03-05T09:11:22.8138950-03:00:Ignored: 0
+2021-03-05T09:11:22.8148934-03:00:Pending: 1
+2021-03-05T09:11:22.8148934-03:00:Skipped: 0
+2021-03-05T09:11:22.8148934-03:00:Failed: 0
+2021-03-05T09:11:22.8248881-03:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-03-05T09:11:22.8248881-03:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T091116.html'
+========== End of log file ==========

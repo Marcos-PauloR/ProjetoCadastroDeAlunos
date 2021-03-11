@@ -1,0 +1,82 @@
+﻿2021-03-05T10:05:22.1567293-03:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-03-05T10:05:22.1567293-03:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.7.3 in Framework clr40 in x86 mode execution started
+2021-03-05T10:05:22.1567293-03:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-03-05T10:05:22.1567293-03:00;VSTestExecutionThread;Info;Current UserName: 'Usuario', MachineName: 'DESKTOP-OJBJSH6'
+2021-03-05T10:05:22.1857107-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T10:05:22.1857107-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-05T10:05:22.1857107-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-05T10:05:22.2286841-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T100522.log
+2021-03-05T10:05:22.2346808-03:00;Thread#13;Info;Checking activation
+2021-03-05T10:05:22.2976425-03:00;Thread#13;Info;Activated.
+2021-03-05T10:05:22.2976425-03:00;Thread#13;Info;Activation check completed
+2021-03-05T10:05:22.2976425-03:00;Thread#13;Info;Starting test run
+2021-03-05T10:05:22.3346683-03:00;Thread#13;Info;Discovering target: Default
+2021-03-05T10:05:22.3346683-03:00;Thread#13;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T10:05:22.6072663-03:00;Thread#13;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T10:05:22.6082658-03:00:Test Suite Dump
+2021-03-05T10:05:22.6102663-03:00:#0: Unnamed project/ - 
+2021-03-05T10:05:22.6102663-03:00:#1: Default - 
+2021-03-05T10:05:22.6102663-03:00:#2: EM.Repository.Tests - 
+2021-03-05T10:05:22.6102663-03:00:#3: Inserir dados na tabela - 
+2021-03-05T10:05:22.6412471-03:00:#4: Adicionar aluno em lista vazia - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Adicionar+aluno+em+lista+vazia
+2021-03-05T10:05:22.6412471-03:00:End: Test Suite Dump
+2021-03-05T10:05:22.6602355-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T10:05:22.6622345-03:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2021-03-05T10:05:22.6622345-03:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-03-05T10:05:22.6662319-03:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-05T10:05:22.6662319-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-03-05T10:05:22.6662319-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-03-05T10:05:22.6662319-03:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-03-05T10:05:22.6672314-03:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-03-05T10:05:22.6682308-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-05T10:05:22.6702294-03:00:Thread #0: creating new test thread executor for EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-03-05T10:05:22.6712290-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-05T10:05:22.6742247-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-05T10:05:22.6762234-03:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2021-03-05T10:05:22.8998121-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
+2021-03-05T10:05:22.9088067-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-03-05T10:05:22.9128042-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T10:05:22.9128042-03:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-03-05T10:05:22.9148030-03:00:Thread#0:T:-> Using default config
+2021-03-05T10:05:23.3205536-03:00:Thread#0: Test #4/0 is started on thread #0
+2021-03-05T10:05:23.3485345-03:00:Thread#0:B:Dado O nome é Jubiscleudio
+2021-03-05T10:05:23.4364818-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoONome("Jubiscleudio") (0,0s)
+2021-03-05T10:05:23.4374812-03:00:Thread#0:B:E Matricula é 123
+2021-03-05T10:05:23.4404794-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoMatriculaE(123) (0,0s)
+2021-03-05T10:05:23.4404794-03:00:Thread#0:B:E Nascimento 29/05/2000
+2021-03-05T10:05:23.4434777-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoNascimento("29/05/2000") (0,0s)
+2021-03-05T10:05:23.4444771-03:00:Thread#0:B:E Sexo Masculino
+2021-03-05T10:05:23.4444771-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoSexo("Masculino") (0,0s)
+2021-03-05T10:05:23.4444771-03:00:Thread#0:B:E Cpf 70536598100
+2021-03-05T10:05:23.4454765-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.DadoCpf("70536598100") (0,0s)
+2021-03-05T10:05:23.4454765-03:00:Thread#0:B:Quando Adicionar dados na lista
+2021-03-05T10:05:23.6546231-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.QuandoAdicionarDadosNaLista() (0,2s)
+2021-03-05T10:05:23.6556244-03:00:Thread#0:B:Entao Mensagem de sucesso
+2021-03-05T10:05:24.8120843-03:00:Thread#0:T:done: InserirDadosNaTabelaSteps.EntaoMensagemDeSucesso() (1,2s)
+2021-03-05T10:05:24.8260758-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T10:05:24.8260758-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-05T10:05:24.8260758-03:00:Thread#0:Scheduler: enumerator for thread is at end
+2021-03-05T10:05:24.8260758-03:00:Thread#0:Scheduler: No more tests for thread
+2021-03-05T10:05:24.8410678-03:00:Thread#0: Test #4/0 is finished on thread #0 as Succeeded within 1,5195149 seconds
+2021-03-05T10:05:24.8900360-03:00:Thread#0:T:LivingDocPlugin: Output generated in: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TestExecution.json
+2021-03-05T10:05:25.6086472-03:00:Trying to cancel thread
+2021-03-05T10:05:25.6086472-03:00:Thread cancelled
+2021-03-05T10:05:25.6166440-03:00:Thread#-1:Scheduler: get next test for thread -1
+2021-03-05T10:05:25.6166440-03:00:Thread#:Scheduler: at the end of normal test queue
+2021-03-05T10:05:25.6166440-03:00:Thread#-1:Scheduler: enumerator for thread is at end
+2021-03-05T10:05:25.6186428-03:00;Thread#13;Info;test run finished
+2021-03-05T10:05:25.6196405-03:00;Thread#13;Info;publishing test results
+2021-03-05T10:05:25.6636137-03:00;Thread#13;Info;test results published
+2021-03-05T10:05:25.6636137-03:00;Thread#13;Info;generating reports
+2021-03-05T10:05:25.7575555-03:00;Thread#13;Info;Starting external report generation process
+2021-03-05T10:05:27.1330331-03:00;Thread#13;Info;Successfully generated reports.
+2021-03-05T10:05:27.1340344-03:00;Thread#13;Info;Successfully generated reports
+2021-03-05T10:05:27.1430290-03:00:Total: 1
+2021-03-05T10:05:27.1440286-03:00:Succeeded: 1
+2021-03-05T10:05:27.1440286-03:00:Ignored: 0
+2021-03-05T10:05:27.1450276-03:00:Pending: 0
+2021-03-05T10:05:27.1450276-03:00:Skipped: 0
+2021-03-05T10:05:27.1450276-03:00:Failed: 0
+2021-03-05T10:05:27.1550201-03:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+2021-03-05T10:05:27.1550201-03:00;VSTestExecutionThread;Info;adding Test Execution Report 'C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T100522.html'
+========== End of log file ==========

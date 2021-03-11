@@ -1,0 +1,40 @@
+﻿2021-03-05T10:15:06.7345546-03:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-03-05T10:15:06.7345546-03:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.7.3 in Framework clr40 in x86 mode execution started
+2021-03-05T10:15:06.7345546-03:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-03-05T10:15:06.7355540-03:00;VSTestExecutionThread;Info;Current UserName: 'Usuario', MachineName: 'DESKTOP-OJBJSH6'
+2021-03-05T10:15:06.7655354-03:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T10:15:06.7655354-03:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Usuario\source\repos\ProjetoFinal\TestResults" (default)
+2021-03-05T10:15:06.7655354-03:00;VSTestExecutionThread;Info;Profile: 
+2021-03-05T10:15:06.8095070-03:00;VSTestExecutionThread;Info;Log file path: C:\Users\Usuario\source\repos\ProjetoFinal\TestResults\Unnamed project__2021-03-05T101506.log
+2021-03-05T10:15:06.8155045-03:00;Thread#14;Info;Checking activation
+2021-03-05T10:15:06.8824644-03:00;Thread#14;Info;Activated.
+2021-03-05T10:15:06.8824644-03:00;Thread#14;Info;Activation check completed
+2021-03-05T10:15:06.8824644-03:00;Thread#14;Info;Starting test run
+2021-03-05T10:15:06.9224386-03:00;Thread#14;Info;Discovering target: Default
+2021-03-05T10:15:06.9224386-03:00;Thread#14;Info;Discovering tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T10:15:07.2040228-03:00;Thread#14;Info;Discovered tests from assembly: C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T10:15:07.2050225-03:00:Test Suite Dump
+2021-03-05T10:15:07.2060230-03:00:#0: Unnamed project/ - 
+2021-03-05T10:15:07.2060230-03:00:#1: Default - 
+2021-03-05T10:15:07.2060230-03:00:#2: EM.Repository.Tests - 
+2021-03-05T10:15:07.2070229-03:00:#3: Inserir dados na tabela - 
+2021-03-05T10:15:07.2380037-03:00:#4: Adicionar aluno em lista vazia - TestAssembly:EM.Repository.Tests/Feature:Inserir+dados+na+tabela/Scenario:Adicionar+aluno+em+lista+vazia
+2021-03-05T10:15:07.2380037-03:00:End: Test Suite Dump
+2021-03-05T10:15:07.2569915-03:00:Thread#0:Scheduler: get next test for thread 0
+2021-03-05T10:15:07.2589990-03:00:Thread#:Scheduler: testitem #4 from normal test queue 
+2021-03-05T10:15:07.2589990-03:00:Thread#0:Scheduler: considering testitem #4 for thread 0
+2021-03-05T10:15:07.2629881-03:00:Thread#0:TestItem#4:testItemMatchesCurrentTestThread:UnSpecific
+2021-03-05T10:15:07.2629881-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadSpecific:False
+2021-03-05T10:15:07.2629881-03:00:Thread#0:TestItem#4:runsOnOneOtherThreadUnspecific:False
+2021-03-05T10:15:07.2629881-03:00:Thread#0:Scheduler: using testitem #4 for thread 0
+2021-03-05T10:15:07.2639873-03:00:Thread#0:Scheduler: Test #4 is scheduled for thread
+2021-03-05T10:15:07.2649867-03:00:Thread#0:Scheduler: with testItemExecutionIndex 0
+2021-03-05T10:15:07.2669854-03:00:Thread #0: creating new test thread executor for EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+2021-03-05T10:15:07.2689823-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-05T10:15:07.2709809-03:00:Thread #0: Creating test assembly executor for execution model AppDomain
+2021-03-05T10:15:07.2729799-03:00:Thread #0: using TechTalk.SpecRun.Framework.Execution.InProcess.InProcAppDomainTestAssemblyExecutorHost to execute tests
+2021-03-05T10:15:07.4933267-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\LivingDoc.SpecFlowPlugin.dll
+2021-03-05T10:15:07.5023209-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\SpecRun.Runtime.SpecFlowPlugin.dll
+2021-03-05T10:15:07.5053193-03:00:Thread#0:T:-> Loading plugin C:\Users\Usuario\source\repos\ProjetoFinal\EM.Repository.Tests\bin\Debug\net472\EM.Repository.Tests.dll
+2021-03-05T10:15:07.5063187-03:00:Thread#0:T:-> Missing [assembly:RuntimePlugin] attribute in EM.Repository.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. Please check https://go.specflow.org/doc-plugins for details.
+2021-03-05T10:15:07.5083181-03:00:Thread#0:T:-> Using default config
