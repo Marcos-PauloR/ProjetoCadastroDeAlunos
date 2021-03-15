@@ -72,16 +72,18 @@ namespace ProjetoFinal
                     if (ValidarCpf(txtCpf.Text))
                     {
                         repositorio.Add(aluno = Dados(aluno));
-                        MostarTabela(aluno);
+                        bindingSource.Add(aluno);
                         Limpar_Click(sender, e);
+                        MessageBox.Show("Aluno Adicionado!", "Adicionado");
                     }
                     else throw new Exception("Cpf Invalido!");
                 }
                 else
                 {
                     repositorio.Add(aluno = Dados(aluno));
-                    MostarTabela(aluno);
+                    bindingSource.Add(aluno);
                     Limpar_Click(sender, e);
+                    MessageBox.Show("Aluno Adicionado!", "Adicionado");
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -94,23 +96,25 @@ namespace ProjetoFinal
                 Aluno aluno = new Aluno();
                 RepositorioAluno repositorio = new RepositorioAluno();
 
-                if (string.IsNullOrEmpty(txtNome.Text) || !maskNasc.MaskCompleted || string.IsNullOrEmpty(txtMatricula.Text)) throw new Exception("Campos vazios!\nPor favor preencher todos!");
+                if (string.IsNullOrEmpty(txtNome.Text) || !maskNasc.MaskCompleted || string.IsNullOrEmpty(txtMatricula.Text)) throw new Exception("Campos vazios!\nPor favor preencher todos marcados com (*)!");
                 if (Convert.ToDateTime(maskNasc.Text) > DateTime.Now) throw new Exception("Formatação de Data errada!\nBem Vindo viajante do tempo!");
                 if (txtCpf.Text != string.Empty && txtCpf.Text != null && txtCpf.Text.Length > 0)
                 {
                     if (ValidarCpf(txtCpf.Text))
                     {
                         repositorio.Update(aluno = Dados(aluno));
-                        MostarTabela(aluno);
+                        bindingSource.Add(aluno);
                         Limpar_Click(sender, e);
+                        MessageBox.Show("Aluno Alterado!","Alterado!");
                     }
                     else throw new Exception("Cpf Invalido!");
                 }
                 else
                 {
                     repositorio.Update(aluno = Dados(aluno));
-                    MostarTabela(aluno);
+                    bindingSource.Add(aluno);
                     Limpar_Click(sender, e);
+                    MessageBox.Show("Aluno Alterado!", "Alterado!");
                 }
                 Cancelar_click(sender, e);
             }
@@ -127,7 +131,7 @@ namespace ProjetoFinal
             btnLimpar.Text = "Limpar";
             ButtonAdd.Text = "Adicionar";
             txtMatricula.ReadOnly = false;
-            label1.Text = "Novo Aluno";
+            label1.Text = "Novo Aluno :";
         }
 
         private void Deletar_Click(object sender, EventArgs e)
@@ -169,7 +173,7 @@ namespace ProjetoFinal
             if (txtMatricula.Text == string.Empty || txtMatricula.Text == null) MessageBox.Show("Primeiro selecione o aluno a ser editado!", "Opa!");
             else
             {
-                label1.Text = "Editando Aluno";
+                label1.Text = "Editando Aluno :";
                 txtMatricula.ReadOnly = true;
                 btnLimpar.Text = "Cancelar";
                 ButtonAdd.Text = "Modificar";
@@ -299,5 +303,7 @@ namespace ProjetoFinal
         {
             if (e.KeyChar == 13) Adicionar_Click(sender, e);
         }
+
+
     }
 }
