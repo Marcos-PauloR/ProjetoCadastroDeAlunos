@@ -291,9 +291,9 @@ namespace ProjetoFinal
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(10, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Matrícula";
+            this.label2.Text = "Matrícula* :";
             // 
             // label3
             // 
@@ -301,9 +301,9 @@ namespace ProjetoFinal
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(192, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
+            this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Nome";
+            this.label3.Text = "Nome* :";
             // 
             // txtNome
             // 
@@ -393,9 +393,9 @@ namespace ProjetoFinal
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(10, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 20);
+            this.label4.Size = new System.Drawing.Size(62, 20);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Sexo";
+            this.label4.Text = "Sexo* :";
             // 
             // label5
             // 
@@ -403,9 +403,9 @@ namespace ProjetoFinal
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(192, 96);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 20);
+            this.label5.Size = new System.Drawing.Size(114, 20);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Nascimento";
+            this.label5.Text = "Nascimento* :";
             // 
             // label6
             // 
@@ -413,9 +413,9 @@ namespace ProjetoFinal
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(343, 98);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 20);
+            this.label6.Size = new System.Drawing.Size(45, 20);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Cpf";
+            this.label6.Text = "Cpf :";
             // 
             // txtMatricula
             // 
